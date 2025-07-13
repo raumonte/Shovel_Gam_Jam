@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfgqnqo7htj7k"]
+
+[ext_resource type="PackedScene" uid="uid://o2xxutubf1cq" path="res://Scenes/Player.tscn" id="1_iukft"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iukft"]
+distance = -2.0
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_iukft")]
+z_index = 2
+position = Vector2(0, -2)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -45)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="Boundries" type="Node" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="Boundries"]
+z_index = 50
+
+[node name="Floor Collision" type="CollisionShape2D" parent="Boundries/Floor"]
+z_index = 50
+shape = SubResource("WorldBoundaryShape2D_iukft")
+debug_color = Color(0, 0.0588235, 0.0431373, 0.85098)
