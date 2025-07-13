@@ -5,3 +5,9 @@
 [node name="Panel" type="Panel" parent="."]
 offset_right = 725.0
 offset_bottom = 405.0
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_right = 313.0
+offset_bottom = 161.0
+text = "FAGGOT"
