@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4iuh5umr33ig"]
 
-[ext_resource type="Texture2D" uid="uid://bvu7q7rqyxr4p" path="res://Sprites/Placeholder/backgroundColorDesert.png" id="1_jix8l"]
-[ext_resource type="Texture2D" uid="uid://66amlwxq8toc" path="res://Sprites/Placeholder/platformPack_tile049.png" id="2_glbon"]
-[ext_resource type="Texture2D" uid="uid://dpldp0nytw5x1" path="res://Sprites/Placeholder/platformPack_tile050.png" id="3_nlkkf"]
-[ext_resource type="Texture2D" uid="uid://mjcn8keimjvp" path="res://Sprites/Placeholder/platformPack_tile052.png" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://bvu7q7rqyxr4p" path="res://Sprites/Placeholder/Placeholder UI Art/backgroundColorDesert.png" id="1_jix8l"]
+[ext_resource type="Texture2D" uid="uid://66amlwxq8toc" path="res://Sprites/Placeholder/Placeholder UI Art/platformPack_tile049.png" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://dpldp0nytw5x1" path="res://Sprites/Placeholder/Placeholder UI Art/platformPack_tile050.png" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://mjcn8keimjvp" path="res://Sprites/Placeholder/Placeholder UI Art/platformPack_tile052.png" id="4_qe12f"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3

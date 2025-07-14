@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvu7q7rqyxr4p"
-path="res://.godot/imported/backgroundColorDesert.png-661cf1a48b62b6ebf009f1165da62953.ctex"
+uid="uid://d3omwyj4byee2"
+path="res://.godot/imported/Jump.png-020b1101ef5a36ceed1a55c4ba3498da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Placeholder/backgroundColorDesert.png"
-dest_files=["res://.godot/imported/backgroundColorDesert.png-661cf1a48b62b6ebf009f1165da62953.ctex"]
+source_file="res://Sprites/Placeholder/Placeholder Player/Jump.png"
+dest_files=["res://.godot/imported/Jump.png-020b1101ef5a36ceed1a55c4ba3498da.ctex"]
 
 [params]
 

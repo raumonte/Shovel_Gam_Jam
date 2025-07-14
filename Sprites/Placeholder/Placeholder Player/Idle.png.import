@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mjcn8keimjvp"
-path="res://.godot/imported/platformPack_tile052.png-645439f9e388431abfe962230160965c.ctex"
+uid="uid://hywcouivxlvk"
+path="res://.godot/imported/Idle.png-94dc92bd67009eb2db1d98e5346a0a5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Placeholder/platformPack_tile052.png"
-dest_files=["res://.godot/imported/platformPack_tile052.png-645439f9e388431abfe962230160965c.ctex"]
+source_file="res://Sprites/Placeholder/Placeholder Player/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-94dc92bd67009eb2db1d98e5346a0a5c.ctex"]
 
 [params]
 

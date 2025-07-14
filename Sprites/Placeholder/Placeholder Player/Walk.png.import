@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://66amlwxq8toc"
-path="res://.godot/imported/platformPack_tile049.png-c5ac4db1c13383eea01f2f9b24935120.ctex"
+uid="uid://dbk2xvwpypuev"
+path="res://.godot/imported/Walk.png-23cc5d74b0730e3d6e1cbf2f5d9d6404.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Placeholder/platformPack_tile049.png"
-dest_files=["res://.godot/imported/platformPack_tile049.png-c5ac4db1c13383eea01f2f9b24935120.ctex"]
+source_file="res://Sprites/Placeholder/Placeholder Player/Walk.png"
+dest_files=["res://.godot/imported/Walk.png-23cc5d74b0730e3d6e1cbf2f5d9d6404.ctex"]
 
 [params]
 

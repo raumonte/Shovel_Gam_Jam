@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://16h1ppvche01"
-path="res://.godot/imported/Sprint.png-bc1a6a14dc440b98c77f4ec2ef2f9da2.ctex"
+uid="uid://66amlwxq8toc"
+path="res://.godot/imported/platformPack_tile049.png-d2aae91a9ca6e28896a5e587737f49a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Placeholder/Sprint.png"
-dest_files=["res://.godot/imported/Sprint.png-bc1a6a14dc440b98c77f4ec2ef2f9da2.ctex"]
+source_file="res://Sprites/Placeholder/Placeholder UI Art/platformPack_tile049.png"
+dest_files=["res://.godot/imported/platformPack_tile049.png-d2aae91a9ca6e28896a5e587737f49a2.ctex"]
 
 [params]
 

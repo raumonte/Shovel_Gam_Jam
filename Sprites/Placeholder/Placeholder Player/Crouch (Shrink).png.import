@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f2moyujfy2un"
-path="res://.godot/imported/platformPack_tile051.png-57e6cdb9609f48b842d6bc8178e0191a.ctex"
+uid="uid://c5scbrusesd4p"
+path="res://.godot/imported/Crouch (Shrink).png-3210caf8c4f9787f28df8c542952a090.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Placeholder/platformPack_tile051.png"
-dest_files=["res://.godot/imported/platformPack_tile051.png-57e6cdb9609f48b842d6bc8178e0191a.ctex"]
+source_file="res://Sprites/Placeholder/Placeholder Player/Crouch (Shrink).png"
+dest_files=["res://.godot/imported/Crouch (Shrink).png-3210caf8c4f9787f28df8c542952a090.ctex"]
 
 [params]
 

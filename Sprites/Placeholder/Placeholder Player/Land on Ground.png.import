@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hywcouivxlvk"
-path="res://.godot/imported/Idle.png-5bcad451cc63fbfebd3055c3a738a052.ctex"
+uid="uid://dj2giutbr0uje"
+path="res://.godot/imported/Land on Ground.png-bbc425ea5287f995bfa0d0e8967a97ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Placeholder/Idle.png"
-dest_files=["res://.godot/imported/Idle.png-5bcad451cc63fbfebd3055c3a738a052.ctex"]
+source_file="res://Sprites/Placeholder/Placeholder Player/Land on Ground.png"
+dest_files=["res://.godot/imported/Land on Ground.png-bbc425ea5287f995bfa0d0e8967a97ac.ctex"]
 
 [params]
 

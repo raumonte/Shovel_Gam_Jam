@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj2giutbr0uje"
-path="res://.godot/imported/Land on Ground.png-b0f499444e67f2ac222eae385311f4e7.ctex"
+uid="uid://dpldp0nytw5x1"
+path="res://.godot/imported/platformPack_tile050.png-e2b1cbcea105af37f3c34165f3bda79c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Placeholder/Land on Ground.png"
-dest_files=["res://.godot/imported/Land on Ground.png-b0f499444e67f2ac222eae385311f4e7.ctex"]
+source_file="res://Sprites/Placeholder/Placeholder UI Art/platformPack_tile050.png"
+dest_files=["res://.godot/imported/platformPack_tile050.png-e2b1cbcea105af37f3c34165f3bda79c.ctex"]
 
 [params]
 
