@@ -245,7 +245,7 @@ height = 44.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kyqiw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Player Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -27)
 sprite_frames = SubResource("SpriteFrames_opqna")
 animation = &"Land"
@@ -253,6 +253,6 @@ autoplay = "Idle"
 frame = 3
 frame_progress = 0.780082
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Player Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -22)
 shape = SubResource("CapsuleShape2D_00okb")
