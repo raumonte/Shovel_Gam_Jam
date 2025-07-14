@@ -9,7 +9,6 @@ distance = -2.0
 
 [node name="Player" parent="." instance=ExtResource("1_iukft")]
 z_index = 2
-position = Vector2(0, -2)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -45)
