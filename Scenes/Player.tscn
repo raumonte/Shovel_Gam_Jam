@@ -402,3 +402,6 @@ frame_progress = 0.386071
 visible = false
 position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_3rw25")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
