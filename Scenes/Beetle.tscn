@@ -4,44 +4,36 @@
 [ext_resource type="Texture2D" uid="uid://by1b2w8aoj78n" path="res://Sprites/icon.svg" id="1_ve6qv"]
 [ext_resource type="PackedScene" uid="uid://yxd8b6lomygi" path="res://Scenes/hitbox.tscn" id="3_t72gn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipb8m"]
-size = Vector2(291, 113)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4y2ou"]
 size = Vector2(63, 104)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipb8m"]
+size = Vector2(291, 113)
+
 [node name="Beetle" type="CharacterBody2D"]
+position = Vector2(575, 321)
 script = ExtResource("1_okpmu")
 
 [node name="Neutral" type="Sprite2D" parent="."]
 scale = Vector2(2.27344, 0.882813)
 texture = ExtResource("1_ve6qv")
 
-[node name="Aggro" type="Sprite2D" parent="."]
+[node name="Aggro" type="Sprite2D" parent="Neutral"]
 modulate = Color(0.811765, 0, 0.12549, 1)
-position = Vector2(-9.53674e-07, 0.500006)
-scale = Vector2(2.28125, 0.882813)
+position = Vector2(0, 0.566376)
+scale = Vector2(1.00344, 1)
 texture = ExtResource("1_ve6qv")
 
-[node name="Beetle Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_ipb8m")
+[node name="Hitbox" parent="Neutral/Aggro" instance=ExtResource("3_t72gn")]
+position = Vector2(0, -0.566376)
+scale = Vector2(0.438356, 1.13274)
 
-[node name="Move Left Timer" type="Timer" parent="."]
-wait_time = 3.0
-
-[node name="Move Right Timer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-
-[node name="Hitbox" parent="." instance=ExtResource("3_t72gn")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Neutral/Aggro/Hitbox"]
 position = Vector2(167.5, 4)
 shape = SubResource("RectangleShape2D_4y2ou")
 disabled = true
 debug_color = Color(0.998824, 0.0271898, 0, 0.42)
 
-[connection signal="timeout" from="Move Left Timer" to="." method="_on_move_left_timer_timeout"]
-[connection signal="timeout" from="Move Left Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Move Right Timer" to="." method="_on_move_right_timer_timeout"]
+[node name="Beetle Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_ipb8m")
