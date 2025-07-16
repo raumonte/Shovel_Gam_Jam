@@ -5,11 +5,13 @@ const JUMP_VELOCITY = -350.0
 var RunSpeedincrease = 2.0
 var CrouchSpeeddecrease = 0.5
 var PlayerHealth = 100
-var Stamina = 5
+var MaxStamina = 5
 
 @onready var player_sprite: AnimatedSprite2D = $"Player Sprite"
 @onready var player_collision: CollisionShape2D = $"Player Collision"
 @onready var timer: Timer = $Timer
+@onready var health_txt: Label = $HealthTxt
+@onready var stamina_txt: Label = $StaminaTxt
 
 
 func _physics_process(delta: float) -> void:
@@ -25,15 +27,21 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
-	var StaminaUsed = timer.time_left
+	var Stamina = timer.time_left
+	var StaminaUsed = snapped(Stamina, 0.01)
 	
 	if Input.is_action_just_pressed("Ability_1"):
 		timer.start(5)
 	elif Input.is_action_just_released("Ability_1"):
 		timer.stop()
-	print(StaminaUsed)
-	Stamina = StaminaUsed
-		
+	if Input.is_action_pressed("Ability_1"):
+		MaxStamina = StaminaUsed
+	print(Stamina)
+	
+	
+	health_txt.text = "Health: " + str(PlayerHealth)
+	stamina_txt.text = "Stamina: " + str(MaxStamina)
+	
 	#Flip the sprite
 	if direction > 0:
 		player_sprite.flip_h = false

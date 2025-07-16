@@ -259,3 +259,21 @@ shape = SubResource("CapsuleShape2D_00okb")
 process_callback = 0
 wait_time = 10.0
 one_shot = true
+
+[node name="HealthTxt" type="Label" parent="."]
+offset_left = -62.0
+offset_top = -91.0
+offset_right = -13.0
+offset_bottom = -74.0
+theme_override_font_sizes/font_size = 12
+text = "Health : "
+horizontal_alignment = 1
+
+[node name="StaminaTxt" type="Label" parent="."]
+offset_left = -62.0
+offset_top = -74.0
+offset_right = -4.0
+offset_bottom = -57.0
+theme_override_font_sizes/font_size = 12
+text = "Stamina : "
+horizontal_alignment = 1

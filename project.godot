@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Shovel_Game_Jam"
-run/main_scene="uid://cfgqnqo7htj7k"
+run/main_scene="uid://c4iuh5umr33ig"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
 
