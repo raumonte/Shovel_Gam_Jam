@@ -3,9 +3,11 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -350.0
 var RunSpeedincrease = 2.0
-var CrouchSpeeddecrease = 0.5
 var PlayerHealth = 100
 var MaxStamina = 5
+var can_RegenStamina = false
+var StaminaRechargeRate = 0.5
+var Stamina = 5
 
 @onready var player_sprite: AnimatedSprite2D = $"Player Sprite"
 @onready var player_collision: CollisionShape2D = $"Player Collision"
@@ -27,20 +29,23 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
-	var Stamina = timer.time_left
+	#Converts the Stamina value into 2 decimal places
 	var StaminaUsed = snapped(Stamina, 0.01)
 	
-	if Input.is_action_just_pressed("Ability_1"):
-		timer.start(5)
-	elif Input.is_action_just_released("Ability_1"):
-		timer.stop()
-	if Input.is_action_pressed("Ability_1"):
-		MaxStamina = StaminaUsed
-	print(Stamina)
+	#Depletes Stamina Resource and toggles Regen State
+	if Input.is_action_pressed("Ability_1") and Stamina > 0:
+		Stamina -= delta
+		can_RegenStamina = false
+	else:
+		can_RegenStamina = true
+		
+	if can_RegenStamina == true:
+		if Stamina < 5:
+			Stamina += (StaminaRechargeRate * delta)
 	
-	
+	#Display Text above the player
 	health_txt.text = "Health: " + str(PlayerHealth)
-	stamina_txt.text = "Stamina: " + str(MaxStamina)
+	stamina_txt.text = "Stamina: " + str(StaminaUsed) + "/ " + str(MaxStamina)
 	
 	#Flip the sprite
 	if direction > 0:
@@ -53,14 +58,14 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if direction == 0:
 			player_sprite.play("Idle")
-		elif direction != 0 and Input.is_action_pressed("Ability_1") and Stamina !=0:
+		elif direction != 0 and Input.is_action_pressed("Ability_1") and Stamina > 0:
 			player_sprite.play("Run")
 		elif direction != 0:
 			player_sprite.play("Walk")
 	else:
 		player_sprite.play("Jump")
 	
-	if direction and Input.is_action_pressed("Ability_1") and Stamina != 0:
+	if direction and Input.is_action_pressed("Ability_1") and Stamina > 0:
 		velocity.x = direction * SPEED * RunSpeedincrease
 	elif direction:
 		velocity.x = direction * SPEED

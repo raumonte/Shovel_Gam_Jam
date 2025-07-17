@@ -8,14 +8,15 @@
 size = Vector2(63, 104)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipb8m"]
-size = Vector2(291, 113)
+size = Vector2(171, 62)
 
 [node name="Beetle" type="CharacterBody2D"]
-position = Vector2(575, 321)
+position = Vector2(0, 1)
 script = ExtResource("1_okpmu")
 
 [node name="Neutral" type="Sprite2D" parent="."]
-scale = Vector2(2.27344, 0.882813)
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(1.33203, 0.480469)
 texture = ExtResource("1_ve6qv")
 
 [node name="Aggro" type="Sprite2D" parent="Neutral"]
@@ -24,16 +25,23 @@ position = Vector2(0, 0.566376)
 scale = Vector2(1.00344, 1)
 texture = ExtResource("1_ve6qv")
 
-[node name="Hitbox" parent="Neutral/Aggro" instance=ExtResource("3_t72gn")]
-position = Vector2(0, -0.566376)
-scale = Vector2(0.438356, 1.13274)
+[node name="Hitbox" parent="Neutral" instance=ExtResource("3_t72gn")]
+scale = Vector2(0.439864, 1.13274)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Neutral/Aggro/Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Neutral/Hitbox"]
 position = Vector2(167.5, 4)
 shape = SubResource("RectangleShape2D_4y2ou")
 disabled = true
 debug_color = Color(0.998824, 0.0271898, 0, 0.42)
 
 [node name="Beetle Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_ipb8m")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -85.0
+offset_top = -50.0
+offset_right = 12.0
+offset_bottom = -36.0
+theme_override_font_sizes/font_size = 10
+text = "Origin Point:"

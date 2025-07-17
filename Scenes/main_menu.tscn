@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4iuh5umr33ig"]
 
-[ext_resource type="Script" uid="uid://22fnl52wtn8c" path="res://main_menu.gd" id="1_glbon"]
+[ext_resource type="Script" uid="uid://22fnl52wtn8c" path="res://Scripts/main_menu.gd" id="1_glbon"]
 [ext_resource type="Texture2D" uid="uid://bvu7q7rqyxr4p" path="res://Sprites/Placeholder/Placeholder UI Art/backgroundColorDesert.png" id="1_jix8l"]
 [ext_resource type="Theme" uid="uid://cqmo8y3g8qa3p" path="res://HeaderLarge.tres" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://bbgqns8o26tl3" path="res://Sprites/Placeholder/Placeholder UI Art/PlayButtonGranolaBar_V1.png" id="4_jix8l"]
