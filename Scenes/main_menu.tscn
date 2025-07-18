@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://22fnl52wtn8c" path="res://Scripts/main_menu.gd" id="1_glbon"]
 [ext_resource type="Texture2D" uid="uid://bvu7q7rqyxr4p" path="res://Sprites/Placeholder/Placeholder UI Art/backgroundColorDesert.png" id="1_jix8l"]
 [ext_resource type="Theme" uid="uid://cqmo8y3g8qa3p" path="res://HeaderLarge.tres" id="2_fu7sn"]
-[ext_resource type="Texture2D" uid="uid://bbgqns8o26tl3" path="res://Sprites/Placeholder/Placeholder UI Art/PlayButtonGranolaBar_V1.png" id="4_jix8l"]
+[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Placeholder/Placeholder UI Art/Button_Granola_Bar_Final.png" id="4_ce3w2"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_glbon")
@@ -48,8 +48,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_fu7sn")
 text = "Play"
-icon = ExtResource("4_jix8l")
-alignment = 0
+icon = ExtResource("4_ce3w2")
 icon_alignment = 1
 expand_icon = true
 
@@ -58,12 +57,20 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_fu7sn")
 text = "Options"
+icon = ExtResource("4_ce3w2")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="Quit" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_fu7sn")
 text = "Quit"
+icon = ExtResource("4_ce3w2")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
