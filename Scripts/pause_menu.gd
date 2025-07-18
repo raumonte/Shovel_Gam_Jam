@@ -5,11 +5,11 @@ func _ready():
 
 func resume():
 	get_tree().paused = false
-	$AnimationPlayer.play("blur")
+	$AnimationPlayer.play_backwards("blur")
 
 func pause():
 	get_tree().paused = true
-	$AnimationPlayer.play_backwards("blur")
+	$AnimationPlayer.play("blur")
 
 func _unhandled_input(_delta):
 	testEsc()
