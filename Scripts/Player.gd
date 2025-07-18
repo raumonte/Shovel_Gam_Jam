@@ -2,18 +2,18 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -350.0
-var RunSpeedincrease = 2.0
+var RunSpeedincrease = 1.75
 var PlayerHealth = 100
-var MaxStamina = 5
+var MaxStamina = 5.00
 var can_RegenStamina = false
-var StaminaRechargeRate = 0.5
+var StaminaRechargeRate = 2
 var Stamina = 5
 
 @onready var player_sprite: AnimatedSprite2D = $"Player Sprite"
 @onready var player_collision: CollisionShape2D = $"Player Collision"
-@onready var timer: Timer = $Timer
 @onready var health_txt: Label = $HealthTxt
 @onready var stamina_txt: Label = $StaminaTxt
+
 
 
 func _physics_process(delta: float) -> void:
@@ -33,8 +33,10 @@ func _physics_process(delta: float) -> void:
 	var StaminaUsed = snapped(Stamina, 0.01)
 	
 	#Depletes Stamina Resource and toggles Regen State
-	if Input.is_action_pressed("Ability_1") and Stamina > 0:
-		Stamina -= delta
+	if direction and Input.is_action_pressed("Ability_1") and Stamina > 0:
+		Stamina -= (2 * delta)
+		can_RegenStamina = false
+	elif direction and Input.is_action_pressed("Ability_1") and Stamina < 0:
 		can_RegenStamina = false
 	else:
 		can_RegenStamina = true
@@ -42,6 +44,12 @@ func _physics_process(delta: float) -> void:
 	if can_RegenStamina == true:
 		if Stamina < 5:
 			Stamina += (StaminaRechargeRate * delta)
+		elif Stamina > 5:
+			Stamina = 5
+	
+	#prevent negatives from appearing in the debug text
+	if Stamina < 0.25:
+		StaminaUsed = 0
 	
 	#Display Text above the player
 	health_txt.text = "Health: " + str(PlayerHealth)
@@ -52,6 +60,7 @@ func _physics_process(delta: float) -> void:
 		player_sprite.flip_h = false
 	elif direction < 0:
 			player_sprite.flip_h = true
+	
 	
 	
 	#Play Animations
@@ -71,5 +80,4 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
 	move_and_slide()

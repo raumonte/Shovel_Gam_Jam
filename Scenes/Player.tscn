@@ -257,7 +257,12 @@ shape = SubResource("CapsuleShape2D_00okb")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 5.0
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
 one_shot = true
 
 [node name="HealthTxt" type="Label" parent="."]
@@ -277,3 +282,5 @@ offset_bottom = -57.0
 theme_override_font_sizes/font_size = 12
 text = "Stamina : "
 horizontal_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
