@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=4 uid="uid://dnbgaag7gxxpx"]
 
-[ext_resource type="Script" uid="uid://bsb8v3nxfkehj" path="res://dev_level.gd" id="1_8ibjf"]
+[ext_resource type="Script" uid="uid://bsb8v3nxfkehj" path="res://Scripts/dev_level.gd" id="1_8ibjf"]
 [ext_resource type="PackedScene" uid="uid://o2xxutubf1cq" path="res://Scenes/Player.tscn" id="1_ceeyk"]
 [ext_resource type="Texture2D" uid="uid://nbf4qsql5242" path="res://Sprites/Placeholder/world_tileset.png" id="2_emybl"]
 [ext_resource type="PackedScene" uid="uid://cnpj0rojucgtl" path="res://Scenes/pause_menu.tscn" id="2_fifoq"]
 [ext_resource type="AudioStream" uid="uid://bowua2u7twi6k" path="res://Audio/AntsGoMarching_ForTheColony.wav" id="3_af4eh"]
 [ext_resource type="PackedScene" uid="uid://dog8ihjv5cf51" path="res://Scenes/Beetle.tscn" id="4_1bib3"]
-[ext_resource type="Script" uid="uid://citwafivocwtg" path="res://scene_manager.gd" id="5_4nm10"]
+[ext_resource type="Script" uid="uid://citwafivocwtg" path="res://Scripts/scene_manager.gd" id="5_4nm10"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_af4eh"]
 texture = ExtResource("2_emybl")
@@ -178,7 +178,7 @@ script = ExtResource("5_4nm10")
 
 [node name="Beetle" parent="SceneManager" instance=ExtResource("4_1bib3")]
 z_index = 2
-position = Vector2(-1014, -34)
+position = Vector2(-817, -34)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

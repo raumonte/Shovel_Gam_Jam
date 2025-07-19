@@ -11,31 +11,32 @@ size = Vector2(63, 104)
 size = Vector2(171, 62)
 
 [node name="Beetle" type="CharacterBody2D"]
-position = Vector2(0, 1)
 script = ExtResource("1_okpmu")
 
-[node name="Neutral" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Neutral" type="Sprite2D" parent="Node2D"]
 position = Vector2(0, -1.90735e-06)
 scale = Vector2(1.33203, 0.480469)
 texture = ExtResource("1_ve6qv")
 
-[node name="Aggro" type="Sprite2D" parent="Neutral"]
-modulate = Color(0.811765, 0, 0.12549, 1)
-position = Vector2(0, 0.566376)
-scale = Vector2(1.00344, 1)
-texture = ExtResource("1_ve6qv")
+[node name="RayCast2D" type="RayCast2D" parent="Node2D"]
+position = Vector2(85, 0)
+rotation = 4.71239
+target_position = Vector2(0, 75)
+collision_mask = 2
 
-[node name="Hitbox" parent="Neutral" instance=ExtResource("3_t72gn")]
-scale = Vector2(0.439864, 1.13274)
+[node name="Hitbox" parent="Node2D" instance=ExtResource("3_t72gn")]
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(0.585912, 0.544246)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Neutral/Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Hitbox"]
 position = Vector2(167.5, 4)
 shape = SubResource("RectangleShape2D_4y2ou")
 disabled = true
 debug_color = Color(0.998824, 0.0271898, 0, 0.42)
 
 [node name="Beetle Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_ipb8m")
 
 [node name="Label" type="Label" parent="."]
@@ -45,3 +46,25 @@ offset_right = 12.0
 offset_bottom = -36.0
 theme_override_font_sizes/font_size = 10
 text = "Origin Point:"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -85.0
+offset_top = -62.0
+offset_right = 12.0
+offset_bottom = -48.0
+theme_override_font_sizes/font_size = 10
+text = "Am I attacking:"
+
+[node name="Reaction Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Attack Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Attack Cooldown" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Reaction Timer" to="." method="_on_reaction_timer_timeout"]
+[connection signal="timeout" from="Attack Timer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Attack Cooldown" to="." method="_on_attack_cooldown_timeout"]
