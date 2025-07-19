@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4iuh5umr33ig"]
+[gd_scene load_steps=6 format=3 uid="uid://c4iuh5umr33ig"]
 
 [ext_resource type="Script" uid="uid://22fnl52wtn8c" path="res://Scripts/main_menu.gd" id="1_glbon"]
 [ext_resource type="Texture2D" uid="uid://bvu7q7rqyxr4p" path="res://Sprites/Placeholder/Placeholder UI Art/backgroundColorDesert.png" id="1_jix8l"]
 [ext_resource type="Theme" uid="uid://cqmo8y3g8qa3p" path="res://HeaderLarge.tres" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Placeholder/Placeholder UI Art/Button_Granola_Bar_Final.png" id="4_ce3w2"]
+[ext_resource type="AudioStream" uid="uid://bowua2u7twi6k" path="res://Audio/AntsGoMarching_ForTheColony.wav" id="5_n45e2"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_glbon")
@@ -83,6 +84,13 @@ theme_type_variation = &"HeaderLarge"
 text = "Antwon Game"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_n45e2")
+autoplay = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control/MusicStreamPlayer"]
+stream = ExtResource("5_n45e2")
 
 [connection signal="pressed" from="Control/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Options" to="." method="_on_options_pressed"]

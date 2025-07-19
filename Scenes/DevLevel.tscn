@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://dnbgaag7gxxpx"]
+[gd_scene load_steps=10 format=4 uid="uid://dnbgaag7gxxpx"]
 
 [ext_resource type="Script" uid="uid://bsb8v3nxfkehj" path="res://dev_level.gd" id="1_8ibjf"]
 [ext_resource type="PackedScene" uid="uid://o2xxutubf1cq" path="res://Scenes/Player.tscn" id="1_ceeyk"]
 [ext_resource type="Texture2D" uid="uid://nbf4qsql5242" path="res://Sprites/Placeholder/world_tileset.png" id="2_emybl"]
+[ext_resource type="PackedScene" uid="uid://cnpj0rojucgtl" path="res://Scenes/pause_menu.tscn" id="2_fifoq"]
 [ext_resource type="AudioStream" uid="uid://bowua2u7twi6k" path="res://Audio/AntsGoMarching_ForTheColony.wav" id="3_af4eh"]
 [ext_resource type="PackedScene" uid="uid://dog8ihjv5cf51" path="res://Scenes/Beetle.tscn" id="4_1bib3"]
 [ext_resource type="Script" uid="uid://citwafivocwtg" path="res://scene_manager.gd" id="5_4nm10"]
@@ -178,3 +179,12 @@ script = ExtResource("5_4nm10")
 [node name="Beetle" parent="SceneManager" instance=ExtResource("4_1bib3")]
 z_index = 2
 position = Vector2(-1014, -34)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_fifoq")]
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+metadata/_edit_use_anchors_ = true

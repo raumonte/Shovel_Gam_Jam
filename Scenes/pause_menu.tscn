@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cnpj0rojucgtl"]
 
 [ext_resource type="Script" uid="uid://di8e8ftafo7u6" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
-[ext_resource type="Shader" path="res://Scenes/pause_menu.gdshader" id="2_1och7"]
+[ext_resource type="Shader" uid="uid://dxgtscfum16h" path="res://Scenes/pause_menu.gdshader" id="2_1och7"]
 [ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Placeholder/Placeholder UI Art/Button_Granola_Bar_Final.png" id="2_k0w1u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1och7"]
