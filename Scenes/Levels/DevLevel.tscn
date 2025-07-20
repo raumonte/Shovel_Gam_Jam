@@ -204,7 +204,6 @@ position = Vector2(984, -32)
 shape = SubResource("RectangleShape2D_nix4l")
 
 [node name="Hitbox" parent="SceneManager" instance=ExtResource("9_pqfln")]
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneManager/Hitbox"]
 position = Vector2(-519, 0)

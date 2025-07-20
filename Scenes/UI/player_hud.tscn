@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://qyolo4frexg0"]
 
 [ext_resource type="Script" uid="uid://dd0mhbd52ts32" path="res://Scripts/UI/player_hud.gd" id="1_iori6"]
-[ext_resource type="Texture2D" uid="uid://m5hgptomjdqa" path="res://Sprites/Assets/Antwon_Health_Stamina.png" id="1_pk5j4"]
+[ext_resource type="Texture2D" uid="uid://m5hgptomjdqa" path="res://Sprites/Assets/UI/Antwon_Health_Stamina.png" id="1_pk5j4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk5j4"]
 bg_color = Color(0.0352941, 0.0352941, 0.0352941, 0.823529)

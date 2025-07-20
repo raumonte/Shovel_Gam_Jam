@@ -5,8 +5,8 @@ extends Node
 @onready var food_source: Area2D = $Food_Source
 @onready var damaged_cooldown: Timer = $Player/DamagedCooldown
 @onready var player_hud: Control = $"Player/Camera2D/Player HUD"
+@onready var anthill: Area2D = $Anthill
 
-var BeetleOriginPoint = 0
 var PlayerObtainedFoodSource = false
 
 
@@ -16,7 +16,6 @@ func _on_damaged_cooldown_timeout() -> void:
 
 func _ready() -> void:
 	PlayerObtainedFoodSource = false
-	BeetleOriginPoint = beetle.get_global_position()
 
 func _process(delta: float) -> void:
 	if player.JustDamaged == true and damaged_cooldown.is_stopped():
@@ -29,11 +28,17 @@ func _process(delta: float) -> void:
 		player.health_manager.Food = player.health_manager.Food + 1
 		PlayerObtainedFoodSource = true
 	
+	if anthill.FoodDeposited == true:
+		anthill.FoodAmountDeposited = anthill.FoodAmountDeposited + player.health_manager.Food
+		player.health_manager.Food = player.health_manager.Food - player.health_manager.Food
+		anthill.PlayerHasFood = false
+		anthill.FoodDeposited = false
+		print("Food Deposited: " + str(anthill.FoodAmountDeposited))
+	
 	#Updating HUD
 	player_hud.HealthBarValue = player.health_manager.PlayerHealth
 	player_hud.StaminaBarValue = player.Stamina
 	
 	if player.health_manager.PlayerHealth < 0.1:
 		get_parent().get_node("SceneManager(Game)/Player/Camera2D/Death_Screen").is_player_dead = true
-	#print("Player Hit? " + str(beetle.hitbox.Hit_Player))
-	#print("JustDamaged? " + str(JustDamaged))
+	

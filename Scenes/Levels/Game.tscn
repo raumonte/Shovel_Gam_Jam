@@ -11,12 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://bt84lbonha13h" path="res://Scenes/Levels/Food.tscn" id="5_uy4ac"]
 [ext_resource type="PackedScene" uid="uid://bdsou1t2ti3cd" path="res://Scenes/Enemies/antlion.tscn" id="6_rbiom"]
 [ext_resource type="PackedScene" uid="uid://c16ih7f74pc5s" path="res://Scenes/Enemies/fish.tscn" id="7_imk1o"]
-[ext_resource type="Texture2D" uid="uid://cbfvgxevxo2qf" path="res://Sprites/Collision Outline.png" id="8_n6duk"]
-[ext_resource type="Texture2D" uid="uid://dg7y2vhwndksg" path="res://Sprites/Assets/Assets.png" id="10_58pyq"]
-[ext_resource type="Texture2D" uid="uid://bonscndj0xyfr" path="res://Sprites/Assets/Background_2.png" id="11_nda3m"]
-[ext_resource type="Texture2D" uid="uid://bqtiebsbn3117" path="res://Sprites/Assets/Background_1.png" id="12_j6t7f"]
-[ext_resource type="Texture2D" uid="uid://dayw43bhv1glv" path="res://Sprites/Assets/leaf.png" id="13_imk1o"]
-[ext_resource type="Texture2D" uid="uid://d0can1ekpqwc8" path="res://Sprites/Assets/Grass_Background.png" id="13_sxf4f"]
+[ext_resource type="Texture2D" uid="uid://dg7y2vhwndksg" path="res://Sprites/Assets/Level/Assets.png" id="10_58pyq"]
+[ext_resource type="PackedScene" uid="uid://byg76u10g5fve" path="res://Scenes/Levels/anthill.tscn" id="10_rbiom"]
+[ext_resource type="Texture2D" uid="uid://bonscndj0xyfr" path="res://Sprites/Assets/Level/Background_2.png" id="11_nda3m"]
+[ext_resource type="Texture2D" uid="uid://bqtiebsbn3117" path="res://Sprites/Assets/Level/Background_1.png" id="12_j6t7f"]
+[ext_resource type="Texture2D" uid="uid://dayw43bhv1glv" path="res://Sprites/Assets/Level/leaf.png" id="13_imk1o"]
+[ext_resource type="Texture2D" uid="uid://d0can1ekpqwc8" path="res://Sprites/Assets/Level/Grass_Background.png" id="13_sxf4f"]
 [ext_resource type="PackedScene" uid="uid://yxd8b6lomygi" path="res://Scenes/Enemies/hitbox.tscn" id="18_rbiom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2bpf"]
@@ -376,7 +376,7 @@ script = ExtResource("1_02ggq")
 
 [node name="Player" parent="SceneManager(Game)" instance=ExtResource("1_45v51")]
 z_index = 3
-position = Vector2(71, 0)
+position = Vector2(102, 16)
 
 [node name="Camera2D" type="Camera2D" parent="SceneManager(Game)/Player"]
 position = Vector2(0, -116)
@@ -395,7 +395,7 @@ offset_bottom = 337.0
 [node name="Death_Screen" parent="SceneManager(Game)/Player/Camera2D" instance=ExtResource("5_rbiom")]
 
 [node name="DamagedCooldown" type="Timer" parent="SceneManager(Game)/Player"]
-wait_time = 2.0
+wait_time = 0.3
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SceneManager(Game)/Player"]
@@ -403,6 +403,8 @@ script = ExtResource("5_oj1cf")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SceneManager(Game)/Player/AudioStreamPlayer"]
 stream = ExtResource("5_eangq")
+volume_db = -5.0
+max_distance = 4096.0
 bus = &"Music"
 
 [node name="Beetle" parent="SceneManager(Game)" instance=ExtResource("4_oj1cf")]
@@ -412,6 +414,9 @@ position = Vector2(1632, -47)
 [node name="Food_Source" parent="SceneManager(Game)" instance=ExtResource("5_uy4ac")]
 z_index = 3
 position = Vector2(6592, -14)
+
+[node name="Anthill" parent="SceneManager(Game)" instance=ExtResource("10_rbiom")]
+position = Vector2(-76, -6)
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -478,11 +483,6 @@ position = Vector2(0, 500)
 position = Vector2(-239, -1212)
 build_mode = 1
 polygon = PackedVector2Array(0, 0, 1, 729, 1020, 730, 1021, 1023, 1553, 1023, 1551, 728, 1594, 697, 2200, 697, 2240, 727, 3373, 728, 3373, 1022, 3936, 1023, 3935, 728, 4910, 728, 4987, 680, 5622, 681, 5697, 728, 6907, 728, 6907, -1)
-
-[node name="CollisionOutline" type="Sprite2D" parent="Boundries"]
-position = Vector2(3210, -105)
-scale = Vector2(2.65423, 1.28338)
-texture = ExtResource("8_n6duk")
 
 [node name="Floaties" type="Node" parent="."]
 
@@ -746,6 +746,7 @@ position = Vector2(3417.63, 185)
 shape = SubResource("RectangleShape2D_imk1o")
 debug_color = Color(0.890196, 0.317647, 0.176471, 0.752941)
 
+[connection signal="I_has_food" from="SceneManager(Game)/Player" to="SceneManager(Game)/Anthill" method="_on_player_i_has_food"]
 [connection signal="timeout" from="SceneManager(Game)/Player/DamagedCooldown" to="SceneManager(Game)" method="_on_damaged_cooldown_timeout"]
 [connection signal="Attacked" from="SceneManager(Game)/Beetle" to="SceneManager(Game)/Player" method="_on_beetle_attacked"]
 [connection signal="Hit" from="SceneManager(Game)/Beetle" to="SceneManager(Game)/Player" method="_on_beetle_hit"]

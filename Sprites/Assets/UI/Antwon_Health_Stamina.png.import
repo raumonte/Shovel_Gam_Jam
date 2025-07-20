@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dayw43bhv1glv"
-path="res://.godot/imported/leaf.png-f1b556928a7b2418fcfe9952fbb8b592.ctex"
+uid="uid://m5hgptomjdqa"
+path="res://.godot/imported/Antwon_Health_Stamina.png-f29f518962c3858ccb5ceb8e776d9109.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Assets/leaf.png"
-dest_files=["res://.godot/imported/leaf.png-f1b556928a7b2418fcfe9952fbb8b592.ctex"]
+source_file="res://Sprites/Assets/UI/Antwon_Health_Stamina.png"
+dest_files=["res://.godot/imported/Antwon_Health_Stamina.png-f29f518962c3858ccb5ceb8e776d9109.ctex"]
 
 [params]
 

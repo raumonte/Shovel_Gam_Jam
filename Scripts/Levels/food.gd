@@ -15,5 +15,5 @@ func _on_body_entered(body: Node2D) -> void:
 		label.text = ""
 
 func _on_body_exited(body: Node2D) -> void:
-	is_in_range = true
+	is_in_range = false
 	label.text = ""

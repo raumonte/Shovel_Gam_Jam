@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0can1ekpqwc8"
-path="res://.godot/imported/Grass_Background.png-189c22160ca1aae484c6c796db699d06.ctex"
+uid="uid://bb2s3vl4vem4n"
+path="res://.godot/imported/Bettle_Antwons_Enemy.png-e7aa2a6204fd2d7b03cfce9d59be1b2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Assets/Grass_Background.png"
-dest_files=["res://.godot/imported/Grass_Background.png-189c22160ca1aae484c6c796db699d06.ctex"]
+source_file="res://Sprites/Assets/Enemies/Bettle_Antwons_Enemy.png"
+dest_files=["res://.godot/imported/Bettle_Antwons_Enemy.png-e7aa2a6204fd2d7b03cfce9d59be1b2e.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdsou1t2ti3cd"]
 
 [ext_resource type="Script" uid="uid://bqax2lwka0jja" path="res://Scripts/Enemies/antlion.gd" id="1_vuxf0"]
-[ext_resource type="Texture2D" uid="uid://btfgdntxshw2k" path="res://Sprites/Assets/Antlion_Antwons_Enemy.png" id="2_vuxf0"]
+[ext_resource type="Texture2D" uid="uid://btfgdntxshw2k" path="res://Sprites/Assets/Enemies/Antlion_Antwons_Enemy.png" id="2_vuxf0"]
 [ext_resource type="PackedScene" uid="uid://yxd8b6lomygi" path="res://Scenes/Enemies/hitbox.tscn" id="3_qk7bt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vuxf0"]

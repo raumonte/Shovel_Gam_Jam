@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wjmvghlvrx6q"
-path="res://.godot/imported/FishTemp.png-c5e09103e022f6913a316b7368ac314d.ctex"
+uid="uid://cvt25fhbp2h8n"
+path="res://.godot/imported/Antwon_Idle-Sheet.png-e7b8dc6c87992ad0a59fe7b509f1a794.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Placeholder/FishTemp.png"
-dest_files=["res://.godot/imported/FishTemp.png-c5e09103e022f6913a316b7368ac314d.ctex"]
+source_file="res://Sprites/Assets/Player/Antwon_Idle-Sheet.png"
+dest_files=["res://.godot/imported/Antwon_Idle-Sheet.png-e7b8dc6c87992ad0a59fe7b509f1a794.ctex"]
 
 [params]
 

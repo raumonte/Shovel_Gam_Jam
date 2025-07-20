@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c16ih7f74pc5s"]
 
 [ext_resource type="Script" uid="uid://gknjfsoboh5a" path="res://Scripts/Enemies/fish.gd" id="1_c4ibo"]
-[ext_resource type="Texture2D" uid="uid://wjmvghlvrx6q" path="res://Sprites/Placeholder/FishTemp.png" id="1_twvwo"]
+[ext_resource type="Texture2D" uid="uid://wjmvghlvrx6q" path="res://Sprites/Assets/Enemies/FishTemp.png" id="1_twvwo"]
 [ext_resource type="PackedScene" uid="uid://yxd8b6lomygi" path="res://Scenes/Enemies/hitbox.tscn" id="3_mtxhk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4ibo"]

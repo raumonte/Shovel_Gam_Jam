@@ -3,7 +3,6 @@ extends Node2D
 signal Hit
 @onready var hitbox: Area2D = $StaticBody2D/Hitbox
 
-
 @onready var raycast2d: RayCast2D = $StaticBody2D/RayCast2D
 var originPos
 var canAttack = true

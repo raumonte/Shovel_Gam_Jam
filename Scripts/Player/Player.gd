@@ -1,17 +1,24 @@
 extends CharacterBody2D
 
+signal I_has_food
+
 const Name = "Player"
+
 const SPEED = 150.0
 const JUMP_VELOCITY = -350.0
+
 var RunSpeedincrease = 1.75
-var MaxStamina = 5.00
 var can_RegenStamina = false
 var StaminaRechargeRate = 2
+var MaxStamina = 5.00
 var Stamina = 5
+
 var Knockback_Direction
 var Knockback
-var direction
 var Knockback_Landed = true
+
+var direction
+
 var JustDamaged = false
 
 @onready var health_manager: Node = %HealthManager
@@ -57,6 +64,9 @@ func _physics_process(delta: float) -> void:
 	#prevent negatives from appearing in the debug text
 	#if Stamina < 0.25:
 		#StaminaUsed = 0
+	
+	if health_manager.Food > 0:
+		emit_signal("I_has_food")
 	
 	#Display Text above the player
 	#health_txt.text = "Health: " + str(health_manager.PlayerHealth)

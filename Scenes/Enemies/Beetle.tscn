@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dog8ihjv5cf51"]
 
 [ext_resource type="Script" uid="uid://clb1bv4eoo58n" path="res://Scripts/Enemies/beetle.gd" id="1_okpmu"]
-[ext_resource type="Texture2D" uid="uid://bb2s3vl4vem4n" path="res://Sprites/Assets/Bettle_Antwons_Enemy.png" id="2_6cg4j"]
+[ext_resource type="Texture2D" uid="uid://bb2s3vl4vem4n" path="res://Sprites/Assets/Enemies/Bettle_Antwons_Enemy.png" id="2_6cg4j"]
 [ext_resource type="PackedScene" uid="uid://yxd8b6lomygi" path="res://Scenes/Enemies/hitbox.tscn" id="3_t72gn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4y2ou"]

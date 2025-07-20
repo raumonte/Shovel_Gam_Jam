@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://yr2gxuvoq60" path="res://Scripts/death_screen.gd" id="1_65cmr"]
 [ext_resource type="Shader" uid="uid://dxgtscfum16h" path="res://Scenes/pause_menu.gdshader" id="2_gjw0p"]
 [ext_resource type="FontFile" uid="uid://q41xhqnbie1n" path="res://UI/upheavtt.ttf" id="3_qofgd"]
-[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Assets/Button_Granola_Bar_Final.png" id="4_vvkn6"]
+[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Assets/UI/Button_Granola_Bar_Final.png" id="4_vvkn6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k5g3b"]
 shader = ExtResource("2_gjw0p")

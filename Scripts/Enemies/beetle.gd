@@ -17,6 +17,7 @@ var Speed = 100
 var direction = 1
 var is_Attacking = false
 var attack_direction = 0
+var originposition
 
 signal Attacked
 signal Hit
@@ -30,6 +31,8 @@ func _on_reaction_timer_timeout() -> void:
 	collision_shape_2d.set_deferred("disabled", false)
 	attack_cooldown.start()
 
+func _ready() -> void:
+	originposition = global_position
 
 func _on_attack_timer_timeout() -> void:
 	is_Attacking = false
@@ -56,9 +59,9 @@ func _process(delta: float) -> void:
 			emit_signal("Hit")
 			print("attacked")
 			
-	if CurrentPosition > (scene_manager_game_.BeetleOriginPoint + Vector2(100,0)) and is_Attacking == false:
+	if CurrentPosition > (originposition + Vector2(100,0)) and is_Attacking == false:
 		direction = -1
-	elif CurrentPosition < (scene_manager_game_.BeetleOriginPoint - Vector2(100,0)) and is_Attacking == false:
+	elif CurrentPosition < (originposition - Vector2(100,0)) and is_Attacking == false:
 		direction = 1
 		
 	node_2d.scale.x = direction

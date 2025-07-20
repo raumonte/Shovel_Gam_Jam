@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpx5usf7s0ju0"
-path="res://.godot/imported/Antlion.png-e5e2f83d06ca344e07e72e17aad17554.ctex"
+uid="uid://btfgdntxshw2k"
+path="res://.godot/imported/Antlion_Antwons_Enemy.png-36dc9bc035af17d45d0459f75bdd42bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Placeholder/Antlion.png"
-dest_files=["res://.godot/imported/Antlion.png-e5e2f83d06ca344e07e72e17aad17554.ctex"]
+source_file="res://Sprites/Assets/Enemies/Antlion_Antwons_Enemy.png"
+dest_files=["res://.godot/imported/Antlion_Antwons_Enemy.png-36dc9bc035af17d45d0459f75bdd42bd.ctex"]
 
 [params]
 

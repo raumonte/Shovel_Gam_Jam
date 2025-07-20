@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg7y2vhwndksg"
-path="res://.godot/imported/Assets.png-45d80432f275836348a8a858731a4891.ctex"
+uid="uid://wjmvghlvrx6q"
+path="res://.godot/imported/FishTemp.png-22cf04949d2f1e533a8f9fe4ecd455bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Assets/Assets.png"
-dest_files=["res://.godot/imported/Assets.png-45d80432f275836348a8a858731a4891.ctex"]
+source_file="res://Sprites/Assets/Enemies/FishTemp.png"
+dest_files=["res://.godot/imported/FishTemp.png-22cf04949d2f1e533a8f9fe4ecd455bc.ctex"]
 
 [params]
 

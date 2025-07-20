@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m5hgptomjdqa"
-path="res://.godot/imported/Antwon_Health_Stamina.png-4553169b41a12e18db54092d3f528b52.ctex"
+uid="uid://cajx1xf4ne4b1"
+path="res://.godot/imported/Button_Granola_Bar_Final.png-ebb2ab83ae46e404e2016912c28d8562.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Assets/Antwon_Health_Stamina.png"
-dest_files=["res://.godot/imported/Antwon_Health_Stamina.png-4553169b41a12e18db54092d3f528b52.ctex"]
+source_file="res://Sprites/Assets/UI/Button_Granola_Bar_Final.png"
+dest_files=["res://.godot/imported/Button_Granola_Bar_Final.png-ebb2ab83ae46e404e2016912c28d8562.ctex"]
 
 [params]
 

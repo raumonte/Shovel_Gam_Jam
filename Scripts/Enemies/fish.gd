@@ -32,7 +32,6 @@ func _process(delta: float) -> void:
 	jumpTime -= delta
 	
 	if !isJumpingUp && !isJumpingDown:
-		print ("Jump")
 		jump()
 		
 	#Signals Player Damage
@@ -64,7 +63,6 @@ func jumpAnim() -> void:
 		isJumpingDown = true
 		isJumpingUp = false
 	elif (isJumpingDown || isJumpingUp) && currentPos.y >= originPos.y:
-		print ("Stopping")
 		isJumpingDown = false
 		isJumpingUp = false
 

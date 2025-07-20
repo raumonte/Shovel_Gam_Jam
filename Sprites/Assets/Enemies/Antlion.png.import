@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cajx1xf4ne4b1"
-path="res://.godot/imported/Button_Granola_Bar_Final.png-4f90a47c85b970077ff7ef08e8e31562.ctex"
+uid="uid://dpx5usf7s0ju0"
+path="res://.godot/imported/Antlion.png-ee07b8f46f0d842485476b6d1428d9ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Assets/Button_Granola_Bar_Final.png"
-dest_files=["res://.godot/imported/Button_Granola_Bar_Final.png-4f90a47c85b970077ff7ef08e8e31562.ctex"]
+source_file="res://Sprites/Assets/Enemies/Antlion.png"
+dest_files=["res://.godot/imported/Antlion.png-ee07b8f46f0d842485476b6d1428d9ce.ctex"]
 
 [params]
 
