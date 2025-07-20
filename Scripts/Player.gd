@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
 	#Converts the Stamina value into 2 decimal places
-	var StaminaUsed = snapped(Stamina, 0.01)
+	#var StaminaUsed = snapped(Stamina, 0.01)
 	
 	#Depletes Stamina Resource and toggles Regen State
 	if direction and Input.is_action_pressed("Ability_1") and Stamina > 0:
@@ -48,12 +48,12 @@ func _physics_process(delta: float) -> void:
 			Stamina = 5
 	
 	#prevent negatives from appearing in the debug text
-	if Stamina < 0.25:
-		StaminaUsed = 0
+	#if Stamina < 0.25:
+		#StaminaUsed = 0
 	
 	#Display Text above the player
-	health_txt.text = "Health: " + str(health_manager.PlayerHealth)
-	stamina_txt.text = "Stamina: " + str(StaminaUsed) + "/ " + str(MaxStamina)
+	#health_txt.text = "Health: " + str(health_manager.PlayerHealth)
+	#stamina_txt.text = "Stamina: " + str(StaminaUsed) + "/ " + str(MaxStamina)
 	
 	#Flip the sprite
 	if direction > 0:

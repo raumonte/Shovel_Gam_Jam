@@ -189,6 +189,10 @@ offset_top = 381.0
 offset_right = 689.0
 offset_bottom = 381.0
 
+[node name="DamagedCooldown" type="Timer" parent="SceneManager/Player"]
+wait_time = 2.0
+one_shot = true
+
 [node name="Food_Source" type="StaticBody2D" parent="SceneManager"]
 position = Vector2(-1, 2)
 
@@ -207,3 +211,5 @@ offset_top = 2.0
 offset_right = -1.0
 offset_bottom = 2.0
 metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="SceneManager/Player/DamagedCooldown" to="SceneManager" method="_on_damaged_cooldown_timeout"]

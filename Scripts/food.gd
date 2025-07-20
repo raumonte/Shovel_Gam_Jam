@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var label: Label = $Label
-@onready var health_manager: Node = %HealthManager
 
 var is_grabbed = false
 var is_in_range = false

@@ -28,6 +28,7 @@ func _on_reaction_timer_timeout() -> void:
 func _on_attack_timer_timeout() -> void:
 	is_Attacking = false
 	Speed = 100
+	collision_shape_2d.set_deferred("disabled", true)
 
 func _on_attack_cooldown_timeout() -> void:
 	ray_cast_2d.enabled = true
