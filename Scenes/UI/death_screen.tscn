@@ -1,15 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnpj0rojucgtl"]
+[gd_scene load_steps=15 format=3 uid="uid://b4d3jk480bf5e"]
 
-[ext_resource type="Script" uid="uid://di8e8ftafo7u6" path="res://Scripts/UI/pause_menu.gd" id="1_k0w1u"]
-[ext_resource type="Shader" uid="uid://dxgtscfum16h" path="res://Scenes/pause_menu.gdshader" id="2_1och7"]
-[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Assets/Button_Granola_Bar_Final.png" id="2_k0w1u"]
-[ext_resource type="FontFile" uid="uid://q41xhqnbie1n" path="res://UI/upheavtt.ttf" id="3_oykix"]
+[ext_resource type="Script" uid="uid://yr2gxuvoq60" path="res://Scripts/death_screen.gd" id="1_65cmr"]
+[ext_resource type="Shader" uid="uid://dxgtscfum16h" path="res://Scenes/pause_menu.gdshader" id="2_gjw0p"]
+[ext_resource type="FontFile" uid="uid://q41xhqnbie1n" path="res://UI/upheavtt.ttf" id="3_qofgd"]
+[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Assets/Button_Granola_Bar_Final.png" id="4_vvkn6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1och7"]
-shader = ExtResource("2_1och7")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5g3b"]
+shader = ExtResource("2_gjw0p")
 shader_parameter/lod = 0.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oykix"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_px83d"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -21,7 +21,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdnb7"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3v8x"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -42,7 +42,7 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_702e2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkc5r"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -53,7 +53,7 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyryt"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfd3j"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -65,7 +65,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23me3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4dv4"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -77,7 +77,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="Theme" id="Theme_rxypi"]
+[sub_resource type="Theme" id="Theme_am61d"]
 Button/colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
@@ -96,12 +96,12 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 18
-Button/fonts/font = ExtResource("3_oykix")
-Button/styles/disabled = SubResource("StyleBoxFlat_oykix")
-Button/styles/focus = SubResource("StyleBoxFlat_kdnb7")
-Button/styles/hover = SubResource("StyleBoxFlat_702e2")
-Button/styles/normal = SubResource("StyleBoxFlat_qyryt")
-Button/styles/pressed = SubResource("StyleBoxFlat_23me3")
+Button/fonts/font = ExtResource("3_qofgd")
+Button/styles/disabled = SubResource("StyleBoxFlat_px83d")
+Button/styles/focus = SubResource("StyleBoxFlat_l3v8x")
+Button/styles/hover = SubResource("StyleBoxFlat_rkc5r")
+Button/styles/normal = SubResource("StyleBoxFlat_tfd3j")
+Button/styles/pressed = SubResource("StyleBoxFlat_s4dv4")
 
 [sub_resource type="Animation" id="Animation_vmyb1"]
 length = 0.001
@@ -226,18 +226,17 @@ _data = {
 &"blur": SubResource("Animation_bpi0q")
 }
 
-[node name="PauseMenu" type="Control"]
-process_mode = 3
+[node name="Death_Screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k0w1u")
+script = ExtResource("1_65cmr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_1och7")
+material = SubResource("ShaderMaterial_k5g3b")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -260,22 +259,22 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-theme = SubResource("Theme_rxypi")
+theme = SubResource("Theme_am61d")
 
-[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Retry" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-text = "Resume"
-icon = ExtResource("2_k0w1u")
+text = "Retry"
+icon = ExtResource("4_vvkn6")
 icon_alignment = 1
 
-[node name="Options" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="MainMenu" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-text = "Options"
-icon = ExtResource("2_k0w1u")
+text = "Main Menu"
+icon = ExtResource("4_vvkn6")
 icon_alignment = 1
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -283,7 +282,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Quit"
-icon = ExtResource("2_k0w1u")
+icon = ExtResource("4_vvkn6")
 icon_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -291,6 +290,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_myy0f")
 }
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

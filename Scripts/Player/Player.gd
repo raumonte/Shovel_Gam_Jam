@@ -12,6 +12,7 @@ var Knockback_Direction
 var Knockback
 var direction
 var Knockback_Landed = true
+var JustDamaged = false
 
 @onready var health_manager: Node = %HealthManager
 @onready var player_sprite: AnimatedSprite2D = $"Player Sprite"
@@ -103,3 +104,10 @@ func _on_beetle_attacked() -> void:
 	Knockback_Direction = beetle_direction
 	direction = Knockback_Direction * -1
 	Knockback = true
+
+
+func _on_hitbox_hit() -> void:
+	var hitbox_damage = get_parent().get_node("Hitbox").Damage
+	if JustDamaged == false:
+		health_manager.PlayerHealth = health_manager.PlayerHealth - hitbox_damage
+		JustDamaged = true
