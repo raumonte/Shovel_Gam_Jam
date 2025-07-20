@@ -18,11 +18,13 @@ var Speed = 100
 var direction = 1
 var is_Attacking = false
 var attack_direction = 0
-var originposition = global_position
+var originposition
 
 signal Attacked
 signal Hit
 
+func _ready() -> void:
+	originposition = global_position
 
 func _on_reaction_timer_timeout() -> void:
 	label_2.text = ""

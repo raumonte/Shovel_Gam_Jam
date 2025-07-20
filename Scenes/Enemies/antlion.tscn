@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdsou1t2ti3cd"]
+[gd_scene load_steps=7 format=3 uid="uid://bdsou1t2ti3cd"]
 
 [ext_resource type="Script" uid="uid://bqax2lwka0jja" path="res://Scripts/Enemies/antlion.gd" id="1_vuxf0"]
 [ext_resource type="Texture2D" uid="uid://btfgdntxshw2k" path="res://Sprites/Assets/Enemies/Antlion_Antwons_Enemy.png" id="2_vuxf0"]
 [ext_resource type="PackedScene" uid="uid://yxd8b6lomygi" path="res://Scenes/Enemies/hitbox.tscn" id="3_qk7bt"]
+[ext_resource type="Texture2D" uid="uid://byhn022axg7xi" path="res://Sprites/Assets/Enemies/Antlion_Antwons_Enemy_Pinchers.png" id="3_rsy3u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vuxf0"]
 
@@ -21,6 +22,10 @@ shape = SubResource("CapsuleShape2D_vuxf0")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 texture = ExtResource("2_vuxf0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, -3)
+texture = ExtResource("3_rsy3u")
 
 [node name="RayCast2D" type="RayCast2D" parent="StaticBody2D"]
 position = Vector2(0, -35)

@@ -2,7 +2,7 @@ extends Node2D
 
 signal Hit
 @onready var hitbox: Area2D = $StaticBody2D/Hitbox
-
+@onready var sprite_2d_2: Sprite2D = $StaticBody2D/Sprite2D2
 @onready var raycast2d: RayCast2D = $StaticBody2D/RayCast2D
 var originPos
 var canAttack = true
@@ -32,11 +32,13 @@ func _physics_process(delta: float) -> void:
 func attack() -> void:
 	if canAttack:
 		translate(Vector2(0, -40))
+		sprite_2d_2.visible = false
 		canAttack = false
 		resetTime = 2
 		
 func attackReset() -> void:
 	if resetTime <= 0 && canAttack == false:
 		canAttack = true
+		sprite_2d_2.visible = true
 		translate(Vector2(0, 40))
 	
