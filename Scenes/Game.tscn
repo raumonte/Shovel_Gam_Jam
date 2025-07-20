@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://cfgqnqo7htj7k"]
+[gd_scene load_steps=15 format=4 uid="uid://cfgqnqo7htj7k"]
 
 [ext_resource type="PackedScene" uid="uid://o2xxutubf1cq" path="res://Scenes/Player.tscn" id="1_iukft"]
 [ext_resource type="Texture2D" uid="uid://cbfvgxevxo2qf" path="res://Sprites/Collision Outline.png" id="2_kldst"]
+[ext_resource type="PackedScene" uid="uid://qyolo4frexg0" path="res://Scenes/player_hud.tscn" id="3_dahhg"]
 [ext_resource type="PackedScene" uid="uid://cnpj0rojucgtl" path="res://Scenes/pause_menu.tscn" id="3_j5yw3"]
 [ext_resource type="Texture2D" uid="uid://by1b2w8aoj78n" path="res://Sprites/icon.svg" id="5_b2bpf"]
 [ext_resource type="Texture2D" uid="uid://bonscndj0xyfr" path="res://Sprites/Assets/Background_2.png" id="6_2irst"]
@@ -366,11 +367,16 @@ position = Vector2(71, 0)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -116)
 zoom = Vector2(3, 3)
-position_smoothing_enabled = true
 
 [node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("3_j5yw3")]
 offset_top = 1.0
 offset_bottom = 1.0
+
+[node name="Player HUD" parent="Player/Camera2D" instance=ExtResource("3_dahhg")]
+offset_left = 611.0
+offset_top = 337.0
+offset_right = 611.0
+offset_bottom = 337.0
 
 [node name="Enemies" type="Node" parent="."]
 
