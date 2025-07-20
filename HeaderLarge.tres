@@ -1,7 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cqmo8y3g8qa3p"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rd5c2"]
-
-[resource]
-Button/styles/normal = SubResource("StyleBoxTexture_rd5c2")
-HeaderLarge/font_sizes/font_size = 90

@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://qyolo4frexg0"]
+
+[ext_resource type="Texture2D" uid="uid://m5hgptomjdqa" path="res://Sprites/Antwon_Health_Stamina.png" id="1_pk5j4"]
+
+[sub_resource type="Theme" id="Theme_pk5j4"]
+
+[node name="Player HUD" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(-858, -488)
+texture = ExtResource("1_pk5j4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Sprite2D"]
+offset_left = -33.0
+offset_top = -10.0
+offset_right = 63.0
+offset_bottom = -4.0
+alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Sprite2D/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = SubResource("Theme_pk5j4")
+fill_mode = 1
+show_percentage = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Sprite2D"]
+offset_left = -33.0
+offset_top = -3.0
+offset_right = 63.0
+offset_bottom = 3.0
+alignment = 2
+
+[node name="ProgressBar2" type="ProgressBar" parent="Sprite2D/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+fill_mode = 1
+show_percentage = false

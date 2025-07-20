@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cnpj0rojucgtl" path="res://Scenes/pause_menu.tscn" id="3_j5yw3"]
 [ext_resource type="Texture2D" uid="uid://by1b2w8aoj78n" path="res://Sprites/icon.svg" id="5_b2bpf"]
 [ext_resource type="Texture2D" uid="uid://bonscndj0xyfr" path="res://Sprites/Assets/Background_2.png" id="6_2irst"]
-[ext_resource type="PackedScene" uid="uid://bdsou1t2ti3cd" path="res://Scenes/antlion.tscn" id="6_7lihs"]
+[ext_resource type="PackedScene" path="res://Scenes/antlion.tscn" id="6_7lihs"]
 [ext_resource type="Texture2D" uid="uid://bqtiebsbn3117" path="res://Sprites/Assets/Background_1.png" id="7_bf53h"]
 [ext_resource type="Texture2D" uid="uid://dg7y2vhwndksg" path="res://Sprites/Assets/Assets.png" id="7_fgofq"]
-[ext_resource type="PackedScene" uid="uid://c16ih7f74pc5s" path="res://Scenes/fish.tscn" id="10_71axn"]
+[ext_resource type="PackedScene" path="res://Scenes/fish.tscn" id="10_71axn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2bpf"]
 size = Vector2(86, 30)

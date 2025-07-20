@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4iuh5umr33ig"]
+[gd_scene load_steps=8 format=3 uid="uid://c4iuh5umr33ig"]
 
 [ext_resource type="Script" uid="uid://22fnl52wtn8c" path="res://Scripts/main_menu.gd" id="1_glbon"]
 [ext_resource type="Texture2D" uid="uid://bvu7q7rqyxr4p" path="res://Sprites/Placeholder/Placeholder UI Art/backgroundColorDesert.png" id="1_jix8l"]
-[ext_resource type="Theme" uid="uid://cqmo8y3g8qa3p" path="res://HeaderLarge.tres" id="2_fu7sn"]
+[ext_resource type="Theme" uid="uid://cqmo8y3g8qa3p" path="res://UI/HeaderLarge.tres" id="2_fu7sn"]
 [ext_resource type="Script" uid="uid://pekksw4la6ix" path="res://Scripts/main_menu_manager.gd" id="2_opfnp"]
-[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Placeholder/Placeholder UI Art/Button_Granola_Bar_Final.png" id="4_ce3w2"]
+[ext_resource type="Theme" uid="uid://7s46va7fkcvg" path="res://UI/OptionsButton.tres" id="5_cp0ys"]
 [ext_resource type="AudioStream" uid="uid://bowua2u7twi6k" path="res://Audio/AntsGoMarching_ForTheColony.wav" id="5_n45e2"]
+[ext_resource type="Theme" uid="uid://d2slw4gd100lu" path="res://UI/QuitButton.tres" id="6_yhxw7"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_glbon")
@@ -43,26 +44,25 @@ layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 104.0
-offset_top = 34.0
-offset_right = 418.0
+offset_top = 54.0
+offset_right = 816.0
 offset_bottom = -114.0
 grow_vertical = 2
+theme = ExtResource("2_fu7sn")
 
 [node name="Play" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_fu7sn")
 text = "Play"
-icon = ExtResource("4_ce3w2")
 icon_alignment = 1
 expand_icon = true
 
 [node name="Options" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("2_fu7sn")
+theme = ExtResource("5_cp0ys")
 text = "Options"
-icon = ExtResource("4_ce3w2")
 clip_text = true
 icon_alignment = 1
 expand_icon = true
@@ -70,9 +70,8 @@ expand_icon = true
 [node name="Quit" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("2_fu7sn")
+theme = ExtResource("6_yhxw7")
 text = "Quit"
-icon = ExtResource("4_ce3w2")
 clip_text = true
 icon_alignment = 1
 expand_icon = true

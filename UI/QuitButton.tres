@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d2slw4gd100lu"]
+
+[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Placeholder/Placeholder UI Art/Button_Granola_Bar_Final.png" id="1_uhebi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_555jk"]
+texture = ExtResource("1_uhebi")
+modulate_color = Color(0.8, 0.791867, 0.312, 1)
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxTexture_555jk")
