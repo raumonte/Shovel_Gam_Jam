@@ -169,7 +169,6 @@ tile_set = SubResource("TileSet_1bib3")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_af4eh")
-autoplay = true
 bus = &"Music"
 
 [node name="SceneManager" type="Node" parent="."]

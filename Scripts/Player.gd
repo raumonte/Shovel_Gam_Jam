@@ -3,11 +3,12 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -350.0
 var RunSpeedincrease = 1.75
-var PlayerHealth = 100
 var MaxStamina = 5.00
 var can_RegenStamina = false
 var StaminaRechargeRate = 2
 var Stamina = 5
+
+@onready var health_manager: Node = %HealthManager
 
 @onready var player_sprite: AnimatedSprite2D = $"Player Sprite"
 @onready var player_collision: CollisionShape2D = $"Player Collision"
@@ -52,7 +53,7 @@ func _physics_process(delta: float) -> void:
 		StaminaUsed = 0
 	
 	#Display Text above the player
-	health_txt.text = "Health: " + str(PlayerHealth)
+	health_txt.text = "Health: " + str(health_manager.PlayerHealth)
 	stamina_txt.text = "Stamina: " + str(StaminaUsed) + "/ " + str(MaxStamina)
 	
 	#Flip the sprite

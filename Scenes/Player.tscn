@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://o2xxutubf1cq"]
+[gd_scene load_steps=39 format=3 uid="uid://o2xxutubf1cq"]
 
 [ext_resource type="Script" uid="uid://djhjrw4rqdd3o" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://hywcouivxlvk" path="res://Sprites/Placeholder/Placeholder Player/Idle.png" id="2_nn08x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dj2giutbr0uje" path="res://Sprites/Placeholder/Placeholder Player/Land on Ground.png" id="4_bhhdu"]
 [ext_resource type="Texture2D" uid="uid://16h1ppvche01" path="res://Sprites/Placeholder/Placeholder Player/Sprint.png" id="5_megsn"]
 [ext_resource type="Texture2D" uid="uid://dbk2xvwpypuev" path="res://Sprites/Placeholder/Placeholder Player/Walk.png" id="6_yoq75"]
+[ext_resource type="Script" uid="uid://2lt7mkjpsbkp" path="res://Scripts/health_manager.gd" id="7_52ee3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ksbbd"]
 atlas = ExtResource("2_nn08x")
@@ -284,5 +285,9 @@ offset_bottom = -57.0
 theme_override_font_sizes/font_size = 12
 text = "Stamina : "
 horizontal_alignment = 1
+
+[node name="HealthManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_52ee3")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
