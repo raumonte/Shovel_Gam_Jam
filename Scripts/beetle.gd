@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 		
 	node_2d.scale.x = direction
 	
-	label.text = "Origin Point: " + str(scene_manager.BeetleOriginPoint)
-	$Label2.text = "Am I attacking:" + str(is_Attacking)
+	#label.text = "Origin Point: " + str(scene_manager.BeetleOriginPoint)
+	#$Label2.text = "Am I attacking:" + str(is_Attacking)
 	
 	position.x += direction * Speed * delta
