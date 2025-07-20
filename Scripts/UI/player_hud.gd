@@ -3,6 +3,7 @@ extends Control
 
 @onready var health: ProgressBar = $Sprite2D/HBoxContainer/Health
 @onready var stamina: ProgressBar = $Sprite2D/HBoxContainer2/Stamina
+@onready var label: Label = $Label
 
 var HealthBarValue = 100
 var StaminaBarValue = 5

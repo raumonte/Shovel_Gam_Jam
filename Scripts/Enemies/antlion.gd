@@ -12,20 +12,23 @@ func _ready() -> void:
 		originPos = global_position
 
 func _process(delta: float) -> void:
-	if resetTime > 0 && canAttack == false:
-		resetTime -= delta
-	
-	for body in hitbox.get_overlapping_bodies():
-		if body.get("Name") == "Player":
-			emit_signal("Hit")
-			print("attacked")
-	
-	attackReset()
+	if is_visible_in_tree() == true:
+		if resetTime > 0 && canAttack == false:
+			resetTime -= delta
+		
+		for body in hitbox.get_overlapping_bodies():
+			if body.get("Name") == "Player":
+				emit_signal("Hit")
+				print("attacked")
+		
+		attackReset()
+
 
 func _physics_process(delta: float) -> void:
-	if raycast2d.is_colliding():
-		attack()
-	
+	if is_visible_in_tree() == true:
+		if raycast2d.is_colliding():
+			attack()
+
 func attack() -> void:
 	if canAttack:
 		translate(Vector2(0, -40))

@@ -1,11 +1,11 @@
 extends Node
 
-@onready var beetle: CharacterBody2D = $Beetle
 @onready var player: CharacterBody2D = $Player
 @onready var food_source: Area2D = $Food_Source
 @onready var damaged_cooldown: Timer = $Player/DamagedCooldown
 @onready var player_hud: Control = $"Player/Camera2D/Player HUD"
 @onready var anthill: Area2D = $Anthill
+@onready var enemies: Node = %Enemies
 
 var PlayerObtainedFoodSource = false
 
@@ -35,9 +35,43 @@ func _process(delta: float) -> void:
 		anthill.FoodDeposited = false
 		print("Food Deposited: " + str(anthill.FoodAmountDeposited))
 	
+	if anthill.LevelCount == 1:
+		enemies.level_1.show()
+		enemies.level_2.hide()
+		enemies.level_3.hide()
+		enemies.level_4.hide()
+		enemies.level_5.hide()
+	elif anthill.LevelCount == 2:
+		enemies.level_1.show()
+		enemies.level_2.show()
+		enemies.level_3.hide()
+		enemies.level_4.hide()
+		enemies.level_5.hide()
+	elif anthill.LevelCount == 3:
+		enemies.level_1.show()
+		enemies.level_2.show()
+		enemies.level_3.show()
+		enemies.level_4.hide()
+		enemies.level_5.hide()
+	elif anthill.LevelCount == 4:
+		enemies.level_1.show()
+		enemies.level_2.show()
+		enemies.level_3.show()
+		enemies.level_4.show()
+		enemies.level_5.hide()
+	elif anthill.LevelCount == 5:
+		enemies.level_1.show()
+		enemies.level_2.show()
+		enemies.level_3.show()
+		enemies.level_4.show()
+		enemies.level_5.show()
+	#elif anthill.LevelCount == 6:
+		#ideally show victory screen
+	
 	#Updating HUD
 	player_hud.HealthBarValue = player.health_manager.PlayerHealth
 	player_hud.StaminaBarValue = player.Stamina
+	player_hud.label.text = "Level: " + str(anthill.LevelCount)
 	
 	if player.health_manager.PlayerHealth < 0.1:
 		get_parent().get_node("SceneManager(Game)/Player/Camera2D/Death_Screen").is_player_dead = true

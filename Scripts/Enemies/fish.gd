@@ -21,26 +21,28 @@ var jumpSpeedMult = 1
 var isJumpingUp = false
 var isJumpingDown = false
 
+
 func _ready() -> void:
 	originPos = global_position
 	jumpPos = (-70)
 	
 func _process(delta: float) -> void:
-	currentPos = global_position
-	jumpUpVector = Vector2(0, (-jumpSpeed * jumpSpeedMult * delta))
-	jumpDownVector = Vector2(0, jumpSpeed * delta)
-	jumpTime -= delta
-	
-	if !isJumpingUp && !isJumpingDown:
-		jump()
+	if is_visible_in_tree() == true:
+		currentPos = global_position
+		jumpUpVector = Vector2(0, (-jumpSpeed * jumpSpeedMult * delta))
+		jumpDownVector = Vector2(0, jumpSpeed * delta)
+		jumpTime -= delta
 		
-	#Signals Player Damage
-	for body in hitbox.get_overlapping_bodies():
-		if body.get("Name") == "Player":
-			emit_signal("Hit")
-			print("attacked")
-	
-	jumpAnim()
+		if !isJumpingUp && !isJumpingDown:
+			jump()
+			
+		#Signals Player Damage
+		for body in hitbox.get_overlapping_bodies():
+			if body.get("Name") == "Player":
+				emit_signal("Hit")
+				print("attacked")
+		
+		jumpAnim()
 	
 func jump() -> void:
 	if jumpTime < 0:

@@ -11,7 +11,7 @@ var RunSpeedincrease = 1.75
 var can_RegenStamina = false
 var StaminaRechargeRate = 2
 var MaxStamina = 5.00
-var Stamina = 5
+var Stamina = 10
 
 var Knockback_Direction
 var Knockback
@@ -110,7 +110,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_beetle_attacked() -> void:
-	var beetle_direction = get_parent().get_node("Beetle").direction
+	var beetle_direction = get_parent().get_parent().get_node("Enemies/Level2/Beetle2").direction
 	Knockback_Direction = beetle_direction
 	direction = Knockback_Direction * -1
 	Knockback = true
@@ -125,21 +125,21 @@ func _on_hitbox_hit() -> void:
 
 
 func _on_beetle_hit() -> void:
-	var hitbox_damage = get_parent().get_node("Beetle").hitbox.BeetleDamage
+	var hitbox_damage = get_parent().get_parent().get_node("Enemies/Level2/Beetle2").hitbox.BeetleDamage
 	if JustDamaged == false:
 		health_manager.PlayerHealth = health_manager.PlayerHealth - hitbox_damage
 		JustDamaged = true
 
 
 func _on_antlion_hit() -> void:
-	var hitbox_damage = get_parent().get_parent().get_node("Enemies/Antlion").hitbox.AntlionDamage
+	var hitbox_damage = get_parent().get_parent().get_node("Enemies/Level1/Antlion2").hitbox.AntlionDamage
 	if JustDamaged == false:
 		health_manager.PlayerHealth = health_manager.PlayerHealth - hitbox_damage
 		JustDamaged = true
 
 
 func _on_fish_hit() -> void:
-	var hitbox_damage = get_parent().get_parent().get_node("Enemies/fish").hitbox.FishDamage
+	var hitbox_damage = get_parent().get_parent().get_node("Enemies/Level1/fish4").hitbox.FishDamage
 	if JustDamaged == false:
 		health_manager.PlayerHealth = health_manager.PlayerHealth - hitbox_damage
 		JustDamaged = true

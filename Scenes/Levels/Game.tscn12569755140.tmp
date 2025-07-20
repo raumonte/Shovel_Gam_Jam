@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cfgqnqo7htj7k"]
+[gd_scene load_steps=26 format=4 uid="uid://cfgqnqo7htj7k"]
 
 [ext_resource type="Script" uid="uid://dsrfshkevh052" path="res://Scripts/Levels/scene_manager(game).gd" id="1_02ggq"]
 [ext_resource type="PackedScene" uid="uid://o2xxutubf1cq" path="res://Scenes/Player/Player.tscn" id="1_45v51"]
@@ -20,9 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://dayw43bhv1glv" path="res://Sprites/Assets/Level/leaf.png" id="13_imk1o"]
 [ext_resource type="Texture2D" uid="uid://d0can1ekpqwc8" path="res://Sprites/Assets/Level/Grass_Background.png" id="13_sxf4f"]
 [ext_resource type="Script" uid="uid://dn2o57h0yopn" path="res://Scripts/Levels/level_2.gd" id="14_58pyq"]
-[ext_resource type="Script" uid="uid://dw76abidrxv6h" path="res://Scripts/Levels/level_3.gd" id="16_58pyq"]
-[ext_resource type="Script" uid="uid://fj0olbqefyb2" path="res://Scripts/Levels/level_4.gd" id="17_nda3m"]
-[ext_resource type="Script" uid="uid://b5pw8jyiqhutw" path="res://Scenes/Levels/level_5.gd" id="18_j6t7f"]
 [ext_resource type="PackedScene" uid="uid://yxd8b6lomygi" path="res://Scenes/Enemies/hitbox.tscn" id="18_rbiom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2bpf"]
@@ -393,10 +390,10 @@ offset_top = 1.0
 offset_bottom = 1.0
 
 [node name="Player HUD" parent="SceneManager(Game)/Player/Camera2D" instance=ExtResource("3_eangq")]
-offset_left = 351.0
-offset_top = -149.0
-offset_right = 351.0
-offset_bottom = -149.0
+offset_left = 611.0
+offset_top = 337.0
+offset_right = 611.0
+offset_bottom = 337.0
 
 [node name="Death_Screen" parent="SceneManager(Game)/Player/Camera2D" instance=ExtResource("5_rbiom")]
 
@@ -465,7 +462,6 @@ position = Vector2(4397, -11)
 
 [node name="Level3" type="Node2D" parent="Enemies"]
 visible = false
-script = ExtResource("16_58pyq")
 
 [node name="Antlion3" parent="Enemies/Level3" instance=ExtResource("6_rbiom")]
 position = Vector2(2479, 49)
@@ -483,7 +479,6 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Level4" type="Node2D" parent="Enemies"]
 visible = false
-script = ExtResource("17_nda3m")
 
 [node name="Antlion7" parent="Enemies/Level4" instance=ExtResource("6_rbiom")]
 position = Vector2(6014, 50)
@@ -502,7 +497,6 @@ position = Vector2(1632, -47)
 
 [node name="Level5" type="Node2D" parent="Enemies"]
 visible = false
-script = ExtResource("18_j6t7f")
 
 [node name="Beetle3" parent="Enemies/Level5" instance=ExtResource("4_oj1cf")]
 z_index = 3

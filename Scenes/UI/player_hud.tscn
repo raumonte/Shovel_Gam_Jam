@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://qyolo4frexg0"]
+[gd_scene load_steps=10 format=3 uid="uid://qyolo4frexg0"]
 
 [ext_resource type="Script" uid="uid://dd0mhbd52ts32" path="res://Scripts/UI/player_hud.gd" id="1_iori6"]
 [ext_resource type="Texture2D" uid="uid://m5hgptomjdqa" path="res://Sprites/Assets/UI/Antwon_Health_Stamina.png" id="1_pk5j4"]
+[ext_resource type="FontFile" uid="uid://q41xhqnbie1n" path="res://UI/upheavtt.ttf" id="3_jh2mb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk5j4"]
 bg_color = Color(0.0352941, 0.0352941, 0.0352941, 0.823529)
@@ -36,7 +37,7 @@ script = ExtResource("1_iori6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 5
-position = Vector2(-858, -488)
+position = Vector2(-597, 0)
 texture = ExtResource("1_pk5j4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Sprite2D"]
@@ -69,3 +70,14 @@ theme = SubResource("Theme_54pr6")
 max_value = 5.0
 value = 5.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -234.0
+offset_top = -37.0
+offset_right = -1.0
+offset_bottom = 38.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jh2mb")
+horizontal_alignment = 1
+vertical_alignment = 1
