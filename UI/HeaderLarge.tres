@@ -1,23 +1,28 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cqmo8y3g8qa3p"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cqmo8y3g8qa3p"]
 
 [ext_resource type="FontFile" uid="uid://q41xhqnbie1n" path="res://UI/upheavtt.ttf" id="1_oesfy"]
-[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Placeholder/Placeholder UI Art/Button_Granola_Bar_Final.png" id="2_mc7hh"]
+[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Assets/Button_Granola_Bar_Final.png" id="2_oesfy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oesfy"]
-texture = ExtResource("2_mc7hh")
+texture = ExtResource("2_oesfy")
+modulate_color = Color(0.529067, 0.529067, 0.529067, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l3v8x"]
-texture = ExtResource("2_mc7hh")
+texture = ExtResource("2_oesfy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mc7hh"]
+texture = ExtResource("2_oesfy")
+modulate_color = Color(0.230315, 0.230315, 0.230315, 1)
 
 [resource]
 default_font_size = 25
 Button/colors/font_color = Color(0.121569, 0.121569, 0.168627, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.266667, 0.666667, 0.0666667, 1)
-Button/colors/font_hover_color = Color(0.266667, 0.666667, 0.0666667, 1)
-Button/colors/font_hover_pressed_color = Color(0.196, 0.49, 0.049, 1)
+Button/colors/font_hover_color = Color(0.824356, 0.834184, 0.819528, 1)
+Button/colors/font_hover_pressed_color = Color(0.958973, 0.955749, 0.949217, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0.18, 0.45, 0.045, 1)
+Button/colors/font_pressed_color = Color(0.960784, 0.956863, 0.94902, 1)
 Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
 Button/colors/icon_focus_color = Color(1, 1, 1, 1)
 Button/colors/icon_hover_color = Color(1, 1, 1, 1)
@@ -33,5 +38,5 @@ Button/styles/disabled = null
 Button/styles/focus = null
 Button/styles/hover = SubResource("StyleBoxTexture_oesfy")
 Button/styles/normal = SubResource("StyleBoxTexture_l3v8x")
-Button/styles/pressed = null
+Button/styles/pressed = SubResource("StyleBoxTexture_mc7hh")
 HeaderLarge/font_sizes/font_size = 90

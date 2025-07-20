@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://7s46va7fkcvg"]
 
-[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Placeholder/Placeholder UI Art/Button_Granola_Bar_Final.png" id="1_0rjnr"]
+[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Assets/Button_Granola_Bar_Final.png" id="1_0rjnr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dioc8"]
 texture = ExtResource("1_0rjnr")

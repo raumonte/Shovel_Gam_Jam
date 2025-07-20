@@ -11,7 +11,7 @@ func _ready() -> void:
 #Sends player to the game scene
 func _on_play_pressed() -> void:
 	update_Musictracker()
-	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/Game.tscn")
 
 func _on_options_pressed() -> void:
 	pass # Replace with function body.

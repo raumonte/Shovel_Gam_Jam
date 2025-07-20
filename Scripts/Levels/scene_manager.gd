@@ -1,5 +1,4 @@
 extends Node
-@onready var beetle: CharacterBody2D = $Beetle
 @onready var player: CharacterBody2D = $Player
 @onready var food_source: StaticBody2D = $Food_Source
 @onready var food: Area2D = $Food_Source/Food
@@ -16,15 +15,8 @@ func _on_damaged_cooldown_timeout() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	PlayerObtainedFoodSource = false
-	BeetleOriginPoint = beetle.get_global_position()
-	beetle.hitbox.Damage = 50
 
 func _process(delta: float) -> void:
-	if beetle.hitbox.Hit_Player == true and JustDamaged == false:
-		player.health_manager.PlayerHealth =  player.health_manager.PlayerHealth - beetle.hitbox.Damage
-		JustDamaged = true
-	if JustDamaged == true:
-		damaged_cooldown.start()
 	
 	if food.is_in_range == true and food.is_grabbed == false and Input.is_action_just_pressed("Interact"):
 		food.is_grabbed = true

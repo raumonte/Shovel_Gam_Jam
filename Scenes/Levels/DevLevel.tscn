@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://dnbgaag7gxxpx"]
+[gd_scene load_steps=12 format=4 uid="uid://dnbgaag7gxxpx"]
 
 [ext_resource type="Script" uid="uid://bsb8v3nxfkehj" path="res://Scripts/Levels/dev_level.gd" id="1_lrsxo"]
 [ext_resource type="Texture2D" uid="uid://nbf4qsql5242" path="res://Sprites/Placeholder/world_tileset.png" id="2_pqfln"]
 [ext_resource type="AudioStream" uid="uid://bowua2u7twi6k" path="res://Audio/AntsGoMarching_ForTheColony.wav" id="3_d2gmd"]
 [ext_resource type="Script" uid="uid://citwafivocwtg" path="res://Scripts/Levels/scene_manager.gd" id="4_st023"]
-[ext_resource type="PackedScene" uid="uid://dog8ihjv5cf51" path="res://Scenes/Enemies/Beetle.tscn" id="5_raumh"]
 [ext_resource type="PackedScene" uid="uid://o2xxutubf1cq" path="res://Scenes/Player/Player.tscn" id="6_vyda2"]
 [ext_resource type="PackedScene" uid="uid://qyolo4frexg0" path="res://Scenes/UI/player_hud.tscn" id="7_kdj75"]
 [ext_resource type="PackedScene" uid="uid://bt84lbonha13h" path="res://Scenes/Levels/Food.tscn" id="8_ynitq"]
@@ -170,10 +169,6 @@ bus = &"Music"
 [node name="SceneManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("4_st023")
-
-[node name="Beetle" parent="SceneManager" instance=ExtResource("5_raumh")]
-z_index = 2
-position = Vector2(-817, -34)
 
 [node name="Player" parent="SceneManager" instance=ExtResource("6_vyda2")]
 z_index = 2
