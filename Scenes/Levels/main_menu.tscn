@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4iuh5umr33ig"]
+
+[ext_resource type="Script" uid="uid://22fnl52wtn8c" path="res://Scripts/UI/main_menu.gd" id="1_b7svq"]
+[ext_resource type="Script" uid="uid://pekksw4la6ix" path="res://Scripts/UI/main_menu_manager.gd" id="2_wnywc"]
+[ext_resource type="Texture2D" uid="uid://bvu7q7rqyxr4p" path="res://Sprites/Placeholder/Placeholder UI Art/backgroundColorDesert.png" id="3_6yab0"]
+[ext_resource type="Theme" uid="uid://cqmo8y3g8qa3p" path="res://UI/HeaderLarge.tres" id="4_w64ul"]
+[ext_resource type="Theme" uid="uid://7s46va7fkcvg" path="res://UI/OptionsButton.tres" id="5_3o5t2"]
+[ext_resource type="Theme" uid="uid://d2slw4gd100lu" path="res://UI/QuitButton.tres" id="6_f0reb"]
+[ext_resource type="AudioStream" uid="uid://bowua2u7twi6k" path="res://Audio/AntsGoMarching_ForTheColony.wav" id="7_juchl"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_b7svq")
+
+[node name="MainMenuManager" type="Node" parent="."]
+script = ExtResource("2_wnywc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_6yab0")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 1028.0
+offset_top = 92.0
+offset_right = 1801.0
+offset_bottom = 565.0
+color = Color(0.103744, 0.103744, 0.103744, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = 54.0
+offset_right = 816.0
+offset_bottom = -114.0
+grow_vertical = 2
+theme = ExtResource("4_w64ul")
+
+[node name="Play" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_w64ul")
+text = "Play"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Options" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_3o5t2")
+text = "Options"
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Quit" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_f0reb")
+text = "Quit"
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 94.0
+offset_right = 1801.0
+offset_bottom = 565.0
+theme = ExtResource("4_w64ul")
+theme_type_variation = &"HeaderLarge"
+text = "Antwon Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("7_juchl")
+autoplay = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control/MusicStreamPlayer"]
+stream = ExtResource("7_juchl")
+
+[connection signal="pressed" from="Control/VBoxContainer/Play" to="MainMenuManager" method="_on_play_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Options" to="MainMenuManager" method="_on_options_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Quit" to="MainMenuManager" method="_on_quit_pressed"]

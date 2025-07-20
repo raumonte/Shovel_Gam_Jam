@@ -21,7 +21,7 @@ buses/default_bus_layout="res://Audio/default_bus_layout.tres"
 
 [autoload]
 
-Musicloop="*res://Scripts/musicloop.gd"
+Musicloop="*res://Scripts/UI/musicloop.gd"
 
 [display]
 

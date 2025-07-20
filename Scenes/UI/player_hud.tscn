@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://qyolo4frexg0"]
+
+[ext_resource type="Script" uid="uid://dd0mhbd52ts32" path="res://Scripts/UI/player_hud.gd" id="1_iori6"]
+[ext_resource type="Texture2D" uid="uid://m5hgptomjdqa" path="res://Sprites/Antwon_Health_Stamina.png" id="1_pk5j4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk5j4"]
+bg_color = Color(0.0352941, 0.0352941, 0.0352941, 0.823529)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iori6"]
+bg_color = Color(0.773427, 0.0895591, 0, 1)
+
+[sub_resource type="Theme" id="Theme_pk5j4"]
+ProgressBar/constants/outline_size = 4
+ProgressBar/styles/background = SubResource("StyleBoxFlat_pk5j4")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_iori6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkmr8"]
+bg_color = Color(0.0431373, 0.0431373, 0.0431373, 0.733333)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uc0x4"]
+bg_color = Color(0.701961, 0.682353, 0, 1)
+
+[sub_resource type="Theme" id="Theme_54pr6"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_pkmr8")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_uc0x4")
+
+[node name="Player HUD" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iori6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(-858, -488)
+texture = ExtResource("1_pk5j4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Sprite2D"]
+offset_left = -33.0
+offset_top = -10.0
+offset_right = 63.0
+offset_bottom = -4.0
+alignment = 2
+
+[node name="Health" type="ProgressBar" parent="Sprite2D/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = SubResource("Theme_pk5j4")
+value = 100.0
+show_percentage = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Sprite2D"]
+offset_left = -33.0
+offset_top = -3.0
+offset_right = 63.0
+offset_bottom = 3.0
+alignment = 2
+
+[node name="Stamina" type="ProgressBar" parent="Sprite2D/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = SubResource("Theme_54pr6")
+max_value = 5.0
+value = 5.0
+show_percentage = false
