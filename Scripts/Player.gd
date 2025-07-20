@@ -9,12 +9,11 @@ var StaminaRechargeRate = 2
 var Stamina = 5
 
 @onready var health_manager: Node = %HealthManager
-
 @onready var player_sprite: AnimatedSprite2D = $"Player Sprite"
 @onready var player_collision: CollisionShape2D = $"Player Collision"
 @onready var health_txt: Label = $HealthTxt
 @onready var stamina_txt: Label = $StaminaTxt
-
+@onready var food_txt: Label = $FoodTxt
 
 
 func _physics_process(delta: float) -> void:
@@ -62,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 			player_sprite.flip_h = true
 	
-	
+	food_txt.text = "Food: " + str(health_manager.Food)
 	
 	#Play Animations
 	if is_on_floor():

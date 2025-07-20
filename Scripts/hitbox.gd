@@ -1,9 +1,8 @@
 extends Area2D
 
-@onready var health_manager: Node = %HealthManager
-
-var Damage = 50
-
+var Damage = 100
+var Hit_Player = false
 
 func _on_body_entered(_body: Node2D) -> void:
+	Hit_Player = true
 	print("You took Damage!")
