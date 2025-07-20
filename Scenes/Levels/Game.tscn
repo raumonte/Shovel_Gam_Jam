@@ -12,10 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://bdsou1t2ti3cd" path="res://Scenes/Enemies/antlion.tscn" id="6_rbiom"]
 [ext_resource type="PackedScene" uid="uid://c16ih7f74pc5s" path="res://Scenes/Enemies/fish.tscn" id="7_imk1o"]
 [ext_resource type="Texture2D" uid="uid://cbfvgxevxo2qf" path="res://Sprites/Collision Outline.png" id="8_n6duk"]
-[ext_resource type="Texture2D" uid="uid://by1b2w8aoj78n" path="res://Sprites/icon.svg" id="9_pf266"]
 [ext_resource type="Texture2D" uid="uid://dg7y2vhwndksg" path="res://Sprites/Assets/Assets.png" id="10_58pyq"]
 [ext_resource type="Texture2D" uid="uid://bonscndj0xyfr" path="res://Sprites/Assets/Background_2.png" id="11_nda3m"]
 [ext_resource type="Texture2D" uid="uid://bqtiebsbn3117" path="res://Sprites/Assets/Background_1.png" id="12_j6t7f"]
+[ext_resource type="Texture2D" uid="uid://dayw43bhv1glv" path="res://Sprites/Assets/leaf.png" id="13_imk1o"]
 [ext_resource type="Texture2D" uid="uid://d0can1ekpqwc8" path="res://Sprites/Assets/Grass_Background.png" id="13_sxf4f"]
 [ext_resource type="PackedScene" uid="uid://yxd8b6lomygi" path="res://Scenes/Enemies/hitbox.tscn" id="18_rbiom"]
 
@@ -480,7 +480,6 @@ build_mode = 1
 polygon = PackedVector2Array(0, 0, 1, 729, 1020, 730, 1021, 1023, 1553, 1023, 1551, 728, 1594, 697, 2200, 697, 2240, 727, 3373, 728, 3373, 1022, 3936, 1023, 3935, 728, 4910, 728, 4987, 680, 5622, 681, 5697, 728, 6907, 728, 6907, -1)
 
 [node name="CollisionOutline" type="Sprite2D" parent="Boundries"]
-visible = false
 position = Vector2(3210, -105)
 scale = Vector2(2.65423, 1.28338)
 texture = ExtResource("8_n6duk")
@@ -497,9 +496,9 @@ shape = SubResource("RectangleShape2D_b2bpf")
 debug_color = Color(0.986632, 0, 0.321576, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floaties/Rock"]
-position = Vector2(899, 33)
-scale = Vector2(0.671875, 0.304688)
-texture = ExtResource("9_pf266")
+position = Vector2(897.75, 28)
+scale = Vector2(1.41406, 1)
+texture = ExtResource("13_imk1o")
 
 [node name="Rock2" type="StaticBody2D" parent="Floaties"]
 z_index = 1
@@ -511,9 +510,9 @@ shape = SubResource("RectangleShape2D_b2bpf")
 debug_color = Color(0.986632, 0, 0.321576, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floaties/Rock2"]
-position = Vector2(899, 33)
-scale = Vector2(0.671875, 0.304688)
-texture = ExtResource("9_pf266")
+position = Vector2(897.75, 29)
+scale = Vector2(1.414, 1)
+texture = ExtResource("13_imk1o")
 
 [node name="Rock3" type="StaticBody2D" parent="Floaties"]
 z_index = 1
@@ -525,9 +524,9 @@ shape = SubResource("RectangleShape2D_b2bpf")
 debug_color = Color(0.986632, 0, 0.321576, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floaties/Rock3"]
-position = Vector2(899, 33)
-scale = Vector2(0.671875, 0.304688)
-texture = ExtResource("9_pf266")
+position = Vector2(898, 30)
+scale = Vector2(1.414, 1)
+texture = ExtResource("13_imk1o")
 
 [node name="Rock4" type="StaticBody2D" parent="Floaties"]
 z_index = 1
@@ -539,9 +538,9 @@ shape = SubResource("RectangleShape2D_b2bpf")
 debug_color = Color(0.986632, 0, 0.321576, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floaties/Rock4"]
-position = Vector2(899, 33)
-scale = Vector2(0.671875, 0.304688)
-texture = ExtResource("9_pf266")
+position = Vector2(900, 29)
+scale = Vector2(1.414, 1)
+texture = ExtResource("13_imk1o")
 
 [node name="Rock5" type="StaticBody2D" parent="Floaties"]
 z_index = 1
@@ -553,9 +552,9 @@ shape = SubResource("RectangleShape2D_b2bpf")
 debug_color = Color(0.986632, 0, 0.321576, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floaties/Rock5"]
-position = Vector2(899, 33)
-scale = Vector2(0.671875, 0.304688)
-texture = ExtResource("9_pf266")
+position = Vector2(899, 31)
+scale = Vector2(1.414, 1)
+texture = ExtResource("13_imk1o")
 
 [node name="Rock6" type="StaticBody2D" parent="Floaties"]
 z_index = 1
@@ -567,9 +566,9 @@ shape = SubResource("RectangleShape2D_b2bpf")
 debug_color = Color(0.986632, 0, 0.321576, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floaties/Rock6"]
-position = Vector2(899, 33)
-scale = Vector2(0.671875, 0.304688)
-texture = ExtResource("9_pf266")
+position = Vector2(899, 30)
+scale = Vector2(1.414, 1)
+texture = ExtResource("13_imk1o")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
