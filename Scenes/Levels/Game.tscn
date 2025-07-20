@@ -391,7 +391,7 @@ one_shot = true
 
 [node name="Beetle" parent="SceneManager(Game)" instance=ExtResource("4_oj1cf")]
 z_index = 3
-position = Vector2(4396, -10)
+position = Vector2(412, -18)
 
 [node name="Food_Source" parent="SceneManager(Game)" instance=ExtResource("5_uy4ac")]
 z_index = 3
@@ -716,3 +716,4 @@ texture = ExtResource("13_sxf4f")
 flip_h = true
 
 [connection signal="timeout" from="SceneManager(Game)/Player/DamagedCooldown" to="SceneManager(Game)" method="_on_damaged_cooldown_timeout"]
+[connection signal="Attacked" from="SceneManager(Game)/Beetle" to="SceneManager(Game)/Player" method="_on_beetle_attacked"]

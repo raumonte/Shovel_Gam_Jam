@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var beetle_collision: CollisionShape2D = $"Beetle Collision"
 @onready var hitbox: Area2D = $Node2D/Hitbox
 @onready var label: Label = $Label
+@onready var label_2: Label = $Label2
 @onready var scene_manager_game_: Node = %"SceneManager(Game)"
 @onready var node_2d: Node2D = $Node2D
 @onready var ray_cast_2d: RayCast2D = $Node2D/RayCast2D
@@ -16,6 +17,8 @@ var Speed = 100
 var direction = 1
 var is_Attacking = false
 var attack_direction = 0
+
+signal Attacked
 
 func _on_reaction_timer_timeout() -> void:
 	Speed = 300
@@ -43,6 +46,11 @@ func _process(delta: float) -> void:
 		Speed = 0
 		ray_cast_2d.enabled = false
 		
+	for body in hitbox.get_overlapping_bodies():
+		if body.get("Name") == "Player":
+			emit_signal("Attacked")
+			print("attacked")
+			
 	if CurrentPosition > (scene_manager_game_.BeetleOriginPoint + Vector2(100,0)) and is_Attacking == false:
 		direction = -1
 	elif CurrentPosition < (scene_manager_game_.BeetleOriginPoint - Vector2(100,0)) and is_Attacking == false:

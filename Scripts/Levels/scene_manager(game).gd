@@ -24,15 +24,20 @@ func _process(delta: float) -> void:
 	if beetle.hitbox.Hit_Player == true and JustDamaged == false:
 		player.health_manager.PlayerHealth =  player.health_manager.PlayerHealth - beetle.hitbox.Damage
 		JustDamaged = true
-	if JustDamaged == true:
+	if JustDamaged == true and beetle.hitbox.Hit_Player == true:
 		damaged_cooldown.start()
 	
+	beetle.label.text = "Hit_Player = " + str(beetle.hitbox.Hit_Player)
+	beetle.label_2.text = "Just Damaged = " + str(JustDamaged)
+	
+	#Ensures player cannot interact with the food source more than once
 	if food_source.is_in_range == true and food_source.is_grabbed == false and Input.is_action_just_pressed("Interact"):
 		food_source.is_grabbed = true
 	if food_source.is_grabbed == true and PlayerObtainedFoodSource == false:
 		player.health_manager.Food = player.health_manager.Food + 1
 		PlayerObtainedFoodSource = true
 	
+	#Updating HUD
 	player_hud.HealthBarValue = player.health_manager.PlayerHealth
 	player_hud.StaminaBarValue = player.Stamina
 	

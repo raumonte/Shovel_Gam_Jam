@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+const Name = "Player"
 const SPEED = 150.0
 const JUMP_VELOCITY = -350.0
 var RunSpeedincrease = 1.75
@@ -7,6 +8,10 @@ var MaxStamina = 5.00
 var can_RegenStamina = false
 var StaminaRechargeRate = 2
 var Stamina = 5
+var Knockback_Direction
+var Knockback
+var direction
+var Knockback_Landed = true
 
 @onready var health_manager: Node = %HealthManager
 @onready var player_sprite: AnimatedSprite2D = $"Player Sprite"
@@ -14,6 +19,7 @@ var Stamina = 5
 @onready var health_txt: Label = $HealthTxt
 @onready var stamina_txt: Label = $StaminaTxt
 @onready var food_txt: Label = $FoodTxt
+@onready var knockback_timer: Timer = $Knockback_Timer
 
 
 func _physics_process(delta: float) -> void:
@@ -27,7 +33,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	direction = Input.get_axis("ui_left", "ui_right")
 	
 	#Converts the Stamina value into 2 decimal places
 	#var StaminaUsed = snapped(Stamina, 0.01)
@@ -54,6 +60,8 @@ func _physics_process(delta: float) -> void:
 	#Display Text above the player
 	#health_txt.text = "Health: " + str(health_manager.PlayerHealth)
 	#stamina_txt.text = "Stamina: " + str(StaminaUsed) + "/ " + str(MaxStamina)
+	if Knockback_Landed == false and is_on_floor():
+		Knockback_Landed = true
 	
 	#Flip the sprite
 	if direction > 0:
@@ -74,10 +82,24 @@ func _physics_process(delta: float) -> void:
 	else:
 		player_sprite.play("Jump")
 	
-	if direction and Input.is_action_pressed("Ability_1") and Stamina > 0:
+	if direction and Input.is_action_pressed("Ability_1") and Stamina > 0 and Knockback_Landed == true:
 		velocity.x = direction * SPEED * RunSpeedincrease
-	elif direction:
+	elif direction and Knockback_Landed == true:
 		velocity.x = direction * SPEED
-	else:
+	elif Knockback_Landed == true:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if Knockback == true:
+		velocity.y = JUMP_VELOCITY * 0.75
+		velocity.x = Knockback_Direction * 400
+		Knockback_Landed = false
+		Knockback = false
+		
 	move_and_slide()
+
+
+func _on_beetle_attacked() -> void:
+	var beetle_direction = get_parent().get_node("Beetle").direction
+	Knockback_Direction = beetle_direction
+	direction = Knockback_Direction * -1
+	Knockback = true
