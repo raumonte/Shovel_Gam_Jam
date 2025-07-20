@@ -16,7 +16,7 @@ func _on_damaged_cooldown_timeout() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	PlayerObtainedFoodSource = false
-	hitbox.Damage = 50
+	hitbox.Damage = 100
 	
 
 func _process(delta: float) -> void:

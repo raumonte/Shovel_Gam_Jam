@@ -107,7 +107,29 @@ func _on_beetle_attacked() -> void:
 
 
 func _on_hitbox_hit() -> void:
-	var hitbox_damage = get_parent().get_node("Hitbox").Damage
+	var hitbox_damage = get_parent().get_parent().get_node("Killboxes/Hitbox").KillboxDamage
+	if JustDamaged == false:
+		health_manager.PlayerHealth = health_manager.PlayerHealth - hitbox_damage
+		JustDamaged = true
+
+
+
+func _on_beetle_hit() -> void:
+	var hitbox_damage = get_parent().get_node("Beetle").hitbox.BeetleDamage
+	if JustDamaged == false:
+		health_manager.PlayerHealth = health_manager.PlayerHealth - hitbox_damage
+		JustDamaged = true
+
+
+func _on_antlion_hit() -> void:
+	var hitbox_damage = get_parent().get_parent().get_node("Enemies/Antlion").hitbox.AntlionDamage
+	if JustDamaged == false:
+		health_manager.PlayerHealth = health_manager.PlayerHealth - hitbox_damage
+		JustDamaged = true
+
+
+func _on_fish_hit() -> void:
+	var hitbox_damage = get_parent().get_parent().get_node("Enemies/fish").hitbox.FishDamage
 	if JustDamaged == false:
 		health_manager.PlayerHealth = health_manager.PlayerHealth - hitbox_damage
 		JustDamaged = true

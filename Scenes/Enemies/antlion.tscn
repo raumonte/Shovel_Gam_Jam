@@ -1,9 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdsou1t2ti3cd"]
+[gd_scene load_steps=6 format=3 uid="uid://bdsou1t2ti3cd"]
 
 [ext_resource type="Script" uid="uid://bqax2lwka0jja" path="res://Scripts/Enemies/antlion.gd" id="1_vuxf0"]
 [ext_resource type="Texture2D" uid="uid://btfgdntxshw2k" path="res://Sprites/Assets/Antlion_Antwons_Enemy.png" id="2_vuxf0"]
+[ext_resource type="PackedScene" uid="uid://yxd8b6lomygi" path="res://Scenes/Enemies/hitbox.tscn" id="3_qk7bt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vuxf0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rsy3u"]
+radius = 12.0
+height = 38.0
 
 [node name="Antlion" type="Node2D"]
 script = ExtResource("1_vuxf0")
@@ -21,3 +26,10 @@ texture = ExtResource("2_vuxf0")
 position = Vector2(0, -35)
 target_position = Vector2(0, -200)
 collision_mask = 15
+
+[node name="Hitbox" parent="StaticBody2D" instance=ExtResource("3_qk7bt")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Hitbox"]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_rsy3u")
+debug_color = Color(0.883761, 0.328514, 0.156151, 0.42)

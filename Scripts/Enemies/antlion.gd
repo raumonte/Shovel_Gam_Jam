@@ -1,5 +1,9 @@
 extends Node2D
 
+signal Hit
+@onready var hitbox: Area2D = $StaticBody2D/Hitbox
+
+
 @onready var raycast2d: RayCast2D = $StaticBody2D/RayCast2D
 var originPos
 var canAttack = true
@@ -11,6 +15,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if resetTime > 0 && canAttack == false:
 		resetTime -= delta
+	
+	for body in hitbox.get_overlapping_bodies():
+		if body.get("Name") == "Player":
+			emit_signal("Hit")
+			print("attacked")
 	
 	attackReset()
 

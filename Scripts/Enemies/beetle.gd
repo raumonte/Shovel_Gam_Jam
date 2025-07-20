@@ -19,6 +19,8 @@ var is_Attacking = false
 var attack_direction = 0
 
 signal Attacked
+signal Hit
+
 
 func _on_reaction_timer_timeout() -> void:
 	label_2.text = ""
@@ -51,6 +53,7 @@ func _process(delta: float) -> void:
 	for body in hitbox.get_overlapping_bodies():
 		if body.get("Name") == "Player":
 			emit_signal("Attacked")
+			emit_signal("Hit")
 			print("attacked")
 			
 	if CurrentPosition > (scene_manager_game_.BeetleOriginPoint + Vector2(100,0)) and is_Attacking == false:

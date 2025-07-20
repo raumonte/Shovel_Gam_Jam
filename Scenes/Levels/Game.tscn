@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cfgqnqo7htj7k"]
+[gd_scene load_steps=23 format=4 uid="uid://cfgqnqo7htj7k"]
 
 [ext_resource type="Script" uid="uid://dsrfshkevh052" path="res://Scripts/Levels/scene_manager(game).gd" id="1_02ggq"]
 [ext_resource type="PackedScene" uid="uid://o2xxutubf1cq" path="res://Scenes/Player/Player.tscn" id="1_45v51"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dog8ihjv5cf51" path="res://Scenes/Enemies/Beetle.tscn" id="4_oj1cf"]
 [ext_resource type="AudioStream" uid="uid://bowua2u7twi6k" path="res://Audio/AntsGoMarching_ForTheColony.wav" id="5_eangq"]
 [ext_resource type="Script" uid="uid://cflnab43acnd2" path="res://Scripts/audio_stream_player.gd" id="5_oj1cf"]
+[ext_resource type="PackedScene" uid="uid://b4d3jk480bf5e" path="res://Scenes/UI/death_screen.tscn" id="5_rbiom"]
 [ext_resource type="PackedScene" uid="uid://bt84lbonha13h" path="res://Scenes/Levels/Food.tscn" id="5_uy4ac"]
 [ext_resource type="PackedScene" uid="uid://bdsou1t2ti3cd" path="res://Scenes/Enemies/antlion.tscn" id="6_rbiom"]
 [ext_resource type="PackedScene" uid="uid://c16ih7f74pc5s" path="res://Scenes/Enemies/fish.tscn" id="7_imk1o"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bonscndj0xyfr" path="res://Sprites/Assets/Background_2.png" id="11_nda3m"]
 [ext_resource type="Texture2D" uid="uid://bqtiebsbn3117" path="res://Sprites/Assets/Background_1.png" id="12_j6t7f"]
 [ext_resource type="Texture2D" uid="uid://d0can1ekpqwc8" path="res://Sprites/Assets/Grass_Background.png" id="13_sxf4f"]
+[ext_resource type="PackedScene" uid="uid://yxd8b6lomygi" path="res://Scenes/Enemies/hitbox.tscn" id="18_rbiom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2bpf"]
 size = Vector2(86, 30)
@@ -363,6 +365,9 @@ texture = ExtResource("10_58pyq")
 [sub_resource type="TileSet" id="TileSet_dahhg"]
 sources/0 = SubResource("TileSetAtlasSource_71axn")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imk1o"]
+size = Vector2(559.25, 272)
+
 [node name="Game" type="Node2D"]
 
 [node name="SceneManager(Game)" type="Node" parent="."]
@@ -387,6 +392,8 @@ offset_top = 337.0
 offset_right = 611.0
 offset_bottom = 337.0
 
+[node name="Death_Screen" parent="SceneManager(Game)/Player/Camera2D" instance=ExtResource("5_rbiom")]
+
 [node name="DamagedCooldown" type="Timer" parent="SceneManager(Game)/Player"]
 wait_time = 2.0
 one_shot = true
@@ -400,7 +407,7 @@ bus = &"Music"
 
 [node name="Beetle" parent="SceneManager(Game)" instance=ExtResource("4_oj1cf")]
 z_index = 3
-position = Vector2(412, -18)
+position = Vector2(1729, -51)
 
 [node name="Food_Source" parent="SceneManager(Game)" instance=ExtResource("5_uy4ac")]
 z_index = 3
@@ -724,5 +731,27 @@ position = Vector2(6532, -84)
 texture = ExtResource("13_sxf4f")
 flip_h = true
 
+[node name="Killboxes" type="Node" parent="."]
+
+[node name="Hitbox" parent="Killboxes" instance=ExtResource("18_rbiom")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killboxes/Hitbox"]
+z_index = 1
+position = Vector2(1049.25, 186)
+shape = SubResource("RectangleShape2D_imk1o")
+debug_color = Color(0.890196, 0.317647, 0.176471, 0.752941)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killboxes/Hitbox"]
+z_index = 1
+position = Vector2(3417.63, 185)
+shape = SubResource("RectangleShape2D_imk1o")
+debug_color = Color(0.890196, 0.317647, 0.176471, 0.752941)
+
 [connection signal="timeout" from="SceneManager(Game)/Player/DamagedCooldown" to="SceneManager(Game)" method="_on_damaged_cooldown_timeout"]
 [connection signal="Attacked" from="SceneManager(Game)/Beetle" to="SceneManager(Game)/Player" method="_on_beetle_attacked"]
+[connection signal="Hit" from="SceneManager(Game)/Beetle" to="SceneManager(Game)/Player" method="_on_beetle_hit"]
+[connection signal="Hit" from="Enemies/Antlion" to="SceneManager(Game)/Player" method="_on_antlion_hit"]
+[connection signal="Hit" from="Enemies/fish" to="SceneManager(Game)/Player" method="_on_fish_hit"]
+[connection signal="Hit" from="Killboxes/Hitbox" to="SceneManager(Game)/Player" method="_on_hitbox_hit"]
+[connection signal="body_entered" from="Killboxes/Hitbox" to="SceneManager(Game)" method="_on_hitbox_body_entered"]

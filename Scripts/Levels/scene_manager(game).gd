@@ -8,25 +8,19 @@ extends Node
 
 var BeetleOriginPoint = 0
 var PlayerObtainedFoodSource = false
-var JustDamaged = false
 
 
 func _on_damaged_cooldown_timeout() -> void:
-	JustDamaged = false
+	player.JustDamaged = false
 
 
 func _ready() -> void:
 	PlayerObtainedFoodSource = false
 	BeetleOriginPoint = beetle.get_global_position()
-	beetle.hitbox.Damage = 50
 
 func _process(delta: float) -> void:
-	if beetle.hitbox.Hit_Player == true and JustDamaged == false:
-		player.health_manager.PlayerHealth =  player.health_manager.PlayerHealth - beetle.hitbox.Damage
-		JustDamaged = true
-	if JustDamaged == true and beetle.hitbox.Hit_Player == true:
+	if player.JustDamaged == true and damaged_cooldown.is_stopped():
 		damaged_cooldown.start()
-	
 	
 	#Ensures player cannot interact with the food source more than once
 	if food_source.is_in_range == true and food_source.is_grabbed == false and Input.is_action_just_pressed("Interact"):
@@ -39,5 +33,7 @@ func _process(delta: float) -> void:
 	player_hud.HealthBarValue = player.health_manager.PlayerHealth
 	player_hud.StaminaBarValue = player.Stamina
 	
+	if player.health_manager.PlayerHealth < 0.1:
+		get_parent().get_node("SceneManager(Game)/Player/Camera2D/Death_Screen").is_player_dead = true
 	#print("Player Hit? " + str(beetle.hitbox.Hit_Player))
 	#print("JustDamaged? " + str(JustDamaged))

@@ -1,5 +1,9 @@
 extends Node2D
 
+signal Hit
+@onready var hitbox: Area2D = $CharacterBody2D/Hitbox
+
+
 var jumpDelay = 3
 var jumpTime = -1
 
@@ -31,6 +35,11 @@ func _process(delta: float) -> void:
 		print ("Jump")
 		jump()
 		
+	#Signals Player Damage
+	for body in hitbox.get_overlapping_bodies():
+		if body.get("Name") == "Player":
+			emit_signal("Hit")
+			print("attacked")
 	
 	jumpAnim()
 	
