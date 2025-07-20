@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var beetle_collision: CollisionShape2D = $"Beetle Collision"
 @onready var hitbox: Area2D = $Node2D/Hitbox
 @onready var label: Label = $Label
-@onready var label_2: Label = $Label2
+@onready var label_2: Label = $Node2D/Label2
 @onready var scene_manager_game_: Node = %"SceneManager(Game)"
 @onready var node_2d: Node2D = $Node2D
 @onready var ray_cast_2d: RayCast2D = $Node2D/RayCast2D
@@ -21,6 +21,7 @@ var attack_direction = 0
 signal Attacked
 
 func _on_reaction_timer_timeout() -> void:
+	label_2.text = ""
 	Speed = 300
 	direction = attack_direction
 	attack_timer.start()
@@ -41,6 +42,7 @@ func _process(delta: float) -> void:
 	
 	if ray_cast_2d.is_colliding() == true:
 		reaction_timer.start()
+		label_2.text = "!"
 		is_Attacking = true
 		attack_direction = direction
 		Speed = 0
