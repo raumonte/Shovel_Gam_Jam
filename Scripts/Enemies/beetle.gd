@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 	else:
 		beetle_collision.set_deferred("disabled", false)
 	if is_visible_in_tree() == true:
-		
+		CurrentPosition = character_body_2d.position
 		if ray_cast_2d.is_colliding() == true:
 			reaction_timer.start()
 			label_2.text = "!"

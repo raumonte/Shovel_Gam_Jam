@@ -70,9 +70,7 @@ func _process(delta: float) -> void:
 		enemies.level_4.show()
 		enemies.level_5.show()
 	elif anthill.LevelCount == 6:
-		player.direction = 0
-		player.player_sprite.play("Happy")
-		timer.start()
+		get_tree().change_scene_to_file("res://Scenes/Levels/Victory.tscn")
 	
 	
 	#Updating HUD
@@ -87,7 +85,4 @@ func _process(delta: float) -> void:
 			Musicloop.Musictracker = audio_stream_player_2d.get_playback_position()
 			Engine.time_scale = 1
 			get_tree().change_scene_to_file("res://Scenes/UI/death_screen.tscn")
-
-
-func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Levels/Victory.tscn")
+	

@@ -447,6 +447,7 @@ position = Vector2(3651, 35)
 scale = Vector2(0.5, 0.5)
 
 [node name="Level2" type="Node2D" parent="Enemies"]
+visible = false
 script = ExtResource("14_58pyq")
 
 [node name="Antlion" parent="Enemies/Level2" instance=ExtResource("6_rbiom")]
