@@ -383,7 +383,7 @@ script = ExtResource("1_02ggq")
 
 [node name="Player" parent="SceneManager(Game)" instance=ExtResource("1_45v51")]
 z_index = 3
-position = Vector2(102, 17)
+position = Vector2(6160, -3)
 
 [node name="Camera2D" type="Camera2D" parent="SceneManager(Game)/Player"]
 position = Vector2(0, -116)
@@ -421,8 +421,7 @@ attenuation = 5.89562e-05
 bus = &"Music"
 
 [node name="Food_Source" parent="SceneManager(Game)" instance=ExtResource("5_uy4ac")]
-z_index = 3
-position = Vector2(6592, -14)
+position = Vector2(6522, -53)
 
 [node name="Anthill" parent="SceneManager(Game)" instance=ExtResource("10_rbiom")]
 position = Vector2(-76, -6)

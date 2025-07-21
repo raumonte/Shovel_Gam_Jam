@@ -221,7 +221,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk",
-"speed": 8.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_00okb"]
@@ -237,8 +237,9 @@ script = ExtResource("1_kyqiw")
 position = Vector2(2.84217e-14, -21)
 scale = Vector2(0.600001, 0.64)
 sprite_frames = SubResource("SpriteFrames_opqna")
-animation = &"Dead"
+animation = &"Walk"
 autoplay = "Idle"
+frame_progress = 0.390919
 
 [node name="Player Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -21)

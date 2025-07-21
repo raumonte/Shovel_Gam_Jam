@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 		food_source.is_grabbed = true
 	if food_source.is_grabbed == true and PlayerObtainedFoodSource == false:
 		player.health_manager.Food = player.health_manager.Food + 1
+		food_source.FoodRemaining = food_source.FoodRemaining - 1
 		PlayerObtainedFoodSource = true
 	
 	if anthill.FoodDeposited == true:
@@ -33,6 +34,7 @@ func _process(delta: float) -> void:
 		player.health_manager.Food = player.health_manager.Food - player.health_manager.Food
 		anthill.PlayerHasFood = false
 		anthill.FoodDeposited = false
+		PlayerObtainedFoodSource = false
 		print("Food Deposited: " + str(anthill.FoodAmountDeposited))
 	
 	if anthill.LevelCount == 1:
