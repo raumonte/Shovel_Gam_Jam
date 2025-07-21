@@ -408,6 +408,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SceneManager(Game)/Player"]
+unique_name_in_owner = true
 script = ExtResource("5_oj1cf")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SceneManager(Game)/Player/AudioStreamPlayer"]
@@ -415,6 +416,7 @@ stream = ExtResource("5_eangq")
 volume_db = -5.0
 max_distance = 10000.0
 attenuation = 5.89562e-05
+panning_strength = 0.0
 bus = &"Music"
 
 [node name="Food_Source" parent="SceneManager(Game)" instance=ExtResource("5_uy4ac")]
@@ -422,6 +424,9 @@ position = Vector2(6522, -53)
 
 [node name="Anthill" parent="SceneManager(Game)" instance=ExtResource("10_rbiom")]
 position = Vector2(-76, -6)
+
+[node name="Timer" type="Timer" parent="SceneManager(Game)"]
+wait_time = 5.0
 
 [node name="Enemies" type="Node" parent="."]
 unique_name_in_owner = true
@@ -783,8 +788,10 @@ position = Vector2(3417.63, 185)
 shape = SubResource("RectangleShape2D_imk1o")
 debug_color = Color(0.890196, 0.317647, 0.176471, 0.752941)
 
+[connection signal="I_has_food" from="SceneManager(Game)/Player" to="SceneManager(Game)/Player/Camera2D/Player HUD" method="_on_player_i_has_food"]
 [connection signal="I_has_food" from="SceneManager(Game)/Player" to="SceneManager(Game)/Anthill" method="_on_player_i_has_food"]
 [connection signal="timeout" from="SceneManager(Game)/Player/DamagedCooldown" to="SceneManager(Game)" method="_on_damaged_cooldown_timeout"]
+[connection signal="timeout" from="SceneManager(Game)/Timer" to="SceneManager(Game)" method="_on_timer_timeout"]
 [connection signal="Hit" from="Enemies/Level1/Antlion2" to="SceneManager(Game)/Player" method="_on_antlion_hit"]
 [connection signal="Hit" from="Enemies/Level1/fish4" to="SceneManager(Game)/Player" method="_on_fish_hit"]
 [connection signal="Hit" from="Enemies/Level1/fish8" to="SceneManager(Game)/Player" method="_on_fish_hit"]

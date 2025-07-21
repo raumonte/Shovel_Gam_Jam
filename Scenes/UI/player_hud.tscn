@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://qyolo4frexg0"]
+[gd_scene load_steps=11 format=3 uid="uid://qyolo4frexg0"]
 
 [ext_resource type="Script" uid="uid://dd0mhbd52ts32" path="res://Scripts/UI/player_hud.gd" id="1_iori6"]
 [ext_resource type="Texture2D" uid="uid://m5hgptomjdqa" path="res://Sprites/Assets/UI/Antwon_Health_Stamina.png" id="1_pk5j4"]
 [ext_resource type="FontFile" uid="uid://q41xhqnbie1n" path="res://UI/upheavtt.ttf" id="3_jh2mb"]
+[ext_resource type="Texture2D" uid="uid://b5sdcspyo1c52" path="res://Sprites/Assets/Crumb.png" id="4_52770"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk5j4"]
 bg_color = Color(0.0352941, 0.0352941, 0.0352941, 0.823529)
@@ -81,3 +82,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jh2mb")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-490, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_52770")

@@ -19,12 +19,14 @@ var direction = 1
 var is_Attacking = false
 var attack_direction = 0
 var originposition
+var CurrentPosition
 
 signal Attacked
 signal Hit
 
 func _ready() -> void:
 	originposition = global_position
+	CurrentPosition = character_body_2d.BeetleCurrentPos
 
 func _on_reaction_timer_timeout() -> void:
 	label_2.text = ""
@@ -49,7 +51,6 @@ func _process(delta: float) -> void:
 	else:
 		beetle_collision.set_deferred("disabled", false)
 	if is_visible_in_tree() == true:
-		var CurrentPosition = character_body_2d.BeetleCurrentPos
 		
 		if ray_cast_2d.is_colliding() == true:
 			reaction_timer.start()

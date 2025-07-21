@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4iuh5umr33ig"]
+[gd_scene load_steps=9 format=3 uid="uid://c4iuh5umr33ig"]
 
 [ext_resource type="Script" uid="uid://22fnl52wtn8c" path="res://Scripts/UI/main_menu.gd" id="1_b7svq"]
 [ext_resource type="Script" uid="uid://pekksw4la6ix" path="res://Scripts/UI/main_menu_manager.gd" id="2_wnywc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://7s46va7fkcvg" path="res://UI/OptionsButton.tres" id="5_3o5t2"]
 [ext_resource type="Theme" uid="uid://d2slw4gd100lu" path="res://UI/QuitButton.tres" id="6_f0reb"]
 [ext_resource type="AudioStream" uid="uid://bowua2u7twi6k" path="res://Audio/AntsGoMarching_ForTheColony.wav" id="7_juchl"]
+[ext_resource type="AudioStream" uid="uid://bc70y6wig47y4" path="res://Audio/coin.wav" id="8_wnywc"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_b7svq")
@@ -54,6 +55,7 @@ expand_icon = true
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("5_3o5t2")
+disabled = true
 text = "Options"
 clip_text = true
 icon_alignment = 1
@@ -69,8 +71,8 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="Control"]
-stream = ExtResource("7_juchl")
 autoplay = true
+max_polyphony = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control/MusicStreamPlayer"]
 stream = ExtResource("7_juchl")
@@ -78,6 +80,15 @@ volume_db = -5.0
 max_distance = 4096.0
 bus = &"Music"
 
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Control/MusicStreamPlayer"]
+stream = ExtResource("8_wnywc")
+volume_db = -5.0
+pitch_scale = 0.5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="pressed" from="Control/VBoxContainer/Play" to="MainMenuManager" method="_on_play_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Options" to="MainMenuManager" method="_on_options_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Quit" to="MainMenuManager" method="_on_quit_pressed"]
+[connection signal="timeout" from="Timer" to="MainMenuManager" method="_on_timer_timeout"]

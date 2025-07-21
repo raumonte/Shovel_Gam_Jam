@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dbd2l8fwxe8if"]
+
+[ext_resource type="FontFile" uid="uid://q41xhqnbie1n" path="res://UI/upheavtt.ttf" id="1_7rs5t"]
+[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Assets/UI/Button_Granola_Bar_Final.png" id="2_jrxlg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xyfmh"]
+texture = ExtResource("2_jrxlg")
+modulate_color = Color(0.678431, 0.109804, 0.14902, 0.72549)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ujou"]
+content_margin_top = 50.0
+content_margin_bottom = 50.0
+texture = ExtResource("2_jrxlg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ti5jb"]
+texture = ExtResource("2_jrxlg")
+modulate_color = Color(0.678431, 0.109804, 0.14902, 0.501961)
+
+[resource]
+Button/colors/font_color = Color(0.0846901, 0.0846898, 0.0846899, 1)
+Button/colors/font_hover_color = Color(0.607586, 0.403978, 0.982917, 1)
+Button/colors/font_hover_pressed_color = Color(0.171958, 2.11775e-06, 0.852372, 1)
+Button/font_sizes/font_size = 35
+Button/fonts/font = ExtResource("1_7rs5t")
+Button/styles/hover = SubResource("StyleBoxTexture_xyfmh")
+Button/styles/normal = SubResource("StyleBoxTexture_6ujou")
+Button/styles/pressed = SubResource("StyleBoxTexture_ti5jb")

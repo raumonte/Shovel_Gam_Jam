@@ -3,6 +3,7 @@ extends Control
 @onready var resume_button: Button = $PanelContainer/VBoxContainer/Resume
 @onready var options: Button = $PanelContainer/VBoxContainer/Options
 @onready var quit: Button = $PanelContainer/VBoxContainer/Quit
+@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 
 var is_menu_open = false
@@ -13,15 +14,11 @@ func _ready():
 func _process(delta: float) -> void:
 	if is_menu_open == true:
 		resume_button.disabled = false
-		options.disabled = false
 		quit.disabled = false
 	else:
 		resume_button.disabled = true
 		options.disabled = true
 		quit.disabled = true
-	print("Resume: " + str(resume_button.disabled))
-	print("Options: " + str(options.disabled))
-	print("Quit: " + str(quit.disabled))
 
 func resume():
 	get_tree().paused = false
@@ -38,6 +35,7 @@ func _unhandled_input(_delta):
 
 func testEsc():
 	if Input.is_action_just_pressed("pause") and get_tree().paused == false and is_menu_open == false:
+		Musicloop.Musictracker = audio_stream_player.audio_stream_player_2d.get_playback_position()
 		pause()
 	elif Input.is_action_just_pressed("pause") and get_tree().paused == true and is_menu_open == true:
 		resume()

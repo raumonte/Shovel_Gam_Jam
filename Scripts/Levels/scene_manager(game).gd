@@ -7,6 +7,7 @@ extends Node
 @onready var anthill: Area2D = $Anthill
 @onready var enemies: Node = %Enemies
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $Player/AudioStreamPlayer/AudioStreamPlayer2D
+@onready var timer: Timer = $Timer
 
 var PlayerObtainedFoodSource = false
 
@@ -31,12 +32,12 @@ func _process(delta: float) -> void:
 		PlayerObtainedFoodSource = true
 	
 	if anthill.FoodDeposited == true:
-		anthill.FoodAmountDeposited = anthill.FoodAmountDeposited + player.health_manager.Food
-		player.health_manager.Food = player.health_manager.Food - player.health_manager.Food
+		player.health_manager.Food = 0
 		anthill.PlayerHasFood = false
+		player_hud.has_food = false
 		anthill.FoodDeposited = false
 		PlayerObtainedFoodSource = false
-		print("Food Deposited: " + str(anthill.FoodAmountDeposited))
+		player.health_manager.PlayerHealth = 100
 	
 	if anthill.LevelCount == 1:
 		enemies.level_1.show()
@@ -68,8 +69,11 @@ func _process(delta: float) -> void:
 		enemies.level_3.show()
 		enemies.level_4.show()
 		enemies.level_5.show()
-	#elif anthill.LevelCount == 6:
-		#ideally show victory screen
+	elif anthill.LevelCount == 6:
+		player.direction = 0
+		player.player_sprite.play("Happy")
+		timer.start()
+	
 	
 	#Updating HUD
 	player_hud.HealthBarValue = player.health_manager.PlayerHealth
@@ -80,14 +84,10 @@ func _process(delta: float) -> void:
 		audio_stream_player_2d.pitch_scale = 0.5
 		Engine.time_scale = 0.5
 		if player.is_on_floor():
+			Musicloop.Musictracker = audio_stream_player_2d.get_playback_position()
 			Engine.time_scale = 1
 			get_tree().change_scene_to_file("res://Scenes/UI/death_screen.tscn")
 
-	
 
-
-
-
-
-func _on_antlion_hit() -> void:
-	pass # Replace with function body.
+func _on_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Levels/Victory.tscn")

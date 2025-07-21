@@ -238,9 +238,8 @@ script = ExtResource("1_kyqiw")
 position = Vector2(2.84217e-14, -21)
 scale = Vector2(0.600001, 0.64)
 sprite_frames = SubResource("SpriteFrames_opqna")
-animation = &"Walk"
+animation = &"Happy"
 autoplay = "Idle"
-frame_progress = 0.390919
 
 [node name="Player Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -21)
@@ -262,6 +261,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="HealthTxt" type="Label" parent="."]
+visible = false
 offset_left = -62.0
 offset_top = -110.0
 offset_right = -13.0
@@ -270,6 +270,7 @@ theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 
 [node name="StaminaTxt" type="Label" parent="."]
+visible = false
 offset_left = -62.0
 offset_top = -93.0
 offset_right = -4.0
@@ -278,6 +279,7 @@ theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 
 [node name="FoodTxt" type="Label" parent="."]
+visible = false
 offset_left = -62.0
 offset_top = -76.0
 offset_right = -4.0

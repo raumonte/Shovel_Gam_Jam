@@ -5,4 +5,4 @@ var BeetleCurrentPos
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-		BeetleCurrentPos = get_position_delta()
+		BeetleCurrentPos = global_position
