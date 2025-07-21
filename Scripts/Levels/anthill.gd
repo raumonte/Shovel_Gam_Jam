@@ -5,8 +5,8 @@ extends Area2D
 
 var is_deposited = false
 var is_in_range = false
-var PlayerHasFood = true
-var FoodDeposited
+var PlayerHasFood = false
+var FoodDeposited = false
 var FoodAmountDeposited = 0
 var LevelCount = 1
 

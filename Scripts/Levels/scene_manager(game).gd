@@ -6,6 +6,7 @@ extends Node
 @onready var player_hud: Control = $"Player/Camera2D/Player HUD"
 @onready var anthill: Area2D = $Anthill
 @onready var enemies: Node = %Enemies
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $Player/AudioStreamPlayer/AudioStreamPlayer2D
 
 var PlayerObtainedFoodSource = false
 
@@ -76,5 +77,9 @@ func _process(delta: float) -> void:
 	player_hud.label.text = "Level: " + str(anthill.LevelCount)
 	
 	if player.health_manager.PlayerHealth < 0.1:
-		get_parent().get_node("SceneManager(Game)/Player/Camera2D/Death_Screen").is_player_dead = true
+		audio_stream_player_2d.pitch_scale = 0.5
+		Engine.time_scale = 0.5
+		if player.is_on_floor():
+			get_tree().change_scene_to_file("res://Scenes/UI/death_screen.tscn")
+
 	

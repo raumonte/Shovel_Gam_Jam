@@ -1,107 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4d3jk480bf5e"]
+[gd_scene load_steps=10 format=3 uid="uid://b4d3jk480bf5e"]
 
 [ext_resource type="Script" uid="uid://yr2gxuvoq60" path="res://Scripts/death_screen.gd" id="1_65cmr"]
-[ext_resource type="Shader" uid="uid://dxgtscfum16h" path="res://Scenes/pause_menu.gdshader" id="2_gjw0p"]
+[ext_resource type="Theme" uid="uid://b74g12hutrgds" path="res://UI/button.tres" id="3_65cmr"]
+[ext_resource type="Texture2D" uid="uid://cwd4dk64yvng7" path="res://Sprites/Assets/Player/Antwon_Dead.png" id="3_gjw0p"]
 [ext_resource type="FontFile" uid="uid://q41xhqnbie1n" path="res://UI/upheavtt.ttf" id="3_qofgd"]
-[ext_resource type="Texture2D" uid="uid://cajx1xf4ne4b1" path="res://Sprites/Assets/UI/Button_Granola_Bar_Final.png" id="4_vvkn6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k5g3b"]
-shader = ExtResource("2_gjw0p")
-shader_parameter/lod = 0.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_px83d"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3v8x"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkc5r"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.225, 0.225, 0.225, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfd3j"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4dv4"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="Theme" id="Theme_am61d"]
-Button/colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
-Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
-Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
-Button/colors/icon_focus_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_normal_color = Color(1, 1, 1, 1)
-Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
-Button/constants/align_to_largest_stylebox = 0
-Button/constants/h_separation = 4
-Button/constants/icon_max_width = 0
-Button/constants/outline_size = 0
-Button/font_sizes/font_size = 18
-Button/fonts/font = ExtResource("3_qofgd")
-Button/styles/disabled = SubResource("StyleBoxFlat_px83d")
-Button/styles/focus = SubResource("StyleBoxFlat_l3v8x")
-Button/styles/hover = SubResource("StyleBoxFlat_rkc5r")
-Button/styles/normal = SubResource("StyleBoxFlat_tfd3j")
-Button/styles/pressed = SubResource("StyleBoxFlat_s4dv4")
+[sub_resource type="Theme" id="Theme_gjw0p"]
 
 [sub_resource type="Animation" id="Animation_vmyb1"]
 length = 0.001
@@ -112,50 +18,6 @@ tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer:modulate:r")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PanelContainer:modulate:g")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PanelContainer:modulate:b")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PanelContainer:modulate:a")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.2, 0, 0.2, 0),
 "times": PackedFloat32Array(0)
@@ -173,50 +35,6 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.2, 0, 0.2, 0, 0.902, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0, 0.4)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer:modulate:r")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.2, 0, 0.2, 0, 1, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0, 0.4)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PanelContainer:modulate:g")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.2, 0, 0.2, 0, 1, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0, 0.4)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PanelContainer:modulate:b")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.2, 0, 0.2, 0, 1, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0, 0.4)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PanelContainer:modulate:a")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0, 1, -0.2, 0, 0.2, 0),
 "times": PackedFloat32Array(0, 0.4)
 }
 
@@ -243,69 +61,75 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.537612, 0.105861, 0, 1)
 
-[node name="PanelContainer2" type="PanelContainer" parent="."]
-visible = false
-layout_mode = 2
-offset_left = 538.0
-offset_top = 66.0
-offset_right = 1377.0
-offset_bottom = 164.0
-size_flags_horizontal = 4
-size_flags_vertical = 8
-
-[node name="Label" type="Label" parent="PanelContainer2"]
+[node name="Label" type="Label" parent="."]
 z_index = 1
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -590.0
+offset_top = 72.0
+offset_right = 595.0
+offset_bottom = 162.0
+grow_horizontal = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("3_qofgd")
-theme_override_font_sizes/font_size = 65
-text = "You Died"
+theme_override_font_sizes/font_size = 100
+text = "You Failed the Colony"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(348, 538)
+rotation = 4.71239
+scale = Vector2(5, 5)
+texture = ExtResource("3_gjw0p")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(1555, 548)
+rotation = -1.5708
+scale = Vector2(5, -5)
+texture = ExtResource("3_gjw0p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.285937
-anchor_top = 0.215741
-anchor_right = 0.724479
-anchor_bottom = 0.799075
-offset_left = -13.0
-offset_top = -69.0
-offset_right = -12.9994
-offset_bottom = -0.000793457
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.5
+offset_top = -259.5
+offset_right = 201.5
+offset_bottom = 259.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_gjw0p")
+alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="Retry" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-theme = SubResource("Theme_am61d")
-
-[node name="Retry" type="Button" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
+theme = ExtResource("3_65cmr")
 text = "Retry"
-icon = ExtResource("4_vvkn6")
 icon_alignment = 1
 
-[node name="MainMenu" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="MainMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 4
+theme = ExtResource("3_65cmr")
 text = "Main Menu"
-icon = ExtResource("4_vvkn6")
 icon_alignment = 1
 
-[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 4
+theme = ExtResource("3_65cmr")
 text = "Quit"
-icon = ExtResource("4_vvkn6")
 icon_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -313,6 +137,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_myy0f")
 }
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

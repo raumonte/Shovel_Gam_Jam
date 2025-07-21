@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cfgqnqo7htj7k"]
+[gd_scene load_steps=29 format=4 uid="uid://cfgqnqo7htj7k"]
 
 [ext_resource type="Script" uid="uid://dsrfshkevh052" path="res://Scripts/Levels/scene_manager(game).gd" id="1_02ggq"]
 [ext_resource type="PackedScene" uid="uid://o2xxutubf1cq" path="res://Scenes/Player/Player.tscn" id="1_45v51"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dog8ihjv5cf51" path="res://Scenes/Enemies/Beetle.tscn" id="4_oj1cf"]
 [ext_resource type="AudioStream" uid="uid://bowua2u7twi6k" path="res://Audio/AntsGoMarching_ForTheColony.wav" id="5_eangq"]
 [ext_resource type="Script" uid="uid://cflnab43acnd2" path="res://Scripts/audio_stream_player.gd" id="5_oj1cf"]
-[ext_resource type="PackedScene" uid="uid://b4d3jk480bf5e" path="res://Scenes/UI/death_screen.tscn" id="5_rbiom"]
 [ext_resource type="PackedScene" uid="uid://bt84lbonha13h" path="res://Scenes/Levels/Food.tscn" id="5_uy4ac"]
 [ext_resource type="PackedScene" uid="uid://bdsou1t2ti3cd" path="res://Scenes/Enemies/antlion.tscn" id="6_rbiom"]
 [ext_resource type="PackedScene" uid="uid://c16ih7f74pc5s" path="res://Scenes/Enemies/fish.tscn" id="7_imk1o"]
@@ -383,7 +382,7 @@ script = ExtResource("1_02ggq")
 
 [node name="Player" parent="SceneManager(Game)" instance=ExtResource("1_45v51")]
 z_index = 3
-position = Vector2(6160, -3)
+position = Vector2(134, 16)
 
 [node name="Camera2D" type="Camera2D" parent="SceneManager(Game)/Player"]
 position = Vector2(0, -116)
@@ -403,8 +402,6 @@ offset_left = 351.0
 offset_top = -149.0
 offset_right = 351.0
 offset_bottom = -149.0
-
-[node name="Death_Screen" parent="SceneManager(Game)/Player/Camera2D" instance=ExtResource("5_rbiom")]
 
 [node name="DamagedCooldown" type="Timer" parent="SceneManager(Game)/Player"]
 wait_time = 0.3

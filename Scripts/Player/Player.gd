@@ -28,6 +28,7 @@ var JustDamaged = false
 @onready var stamina_txt: Label = $StaminaTxt
 @onready var food_txt: Label = $FoodTxt
 @onready var knockback_timer: Timer = $Knockback_Timer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func _physics_process(delta: float) -> void:
@@ -36,12 +37,13 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and health_manager.PlayerHealth > 0.01:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	direction = Input.get_axis("ui_left", "ui_right")
+	if health_manager.PlayerHealth > 0.01:
+		direction = Input.get_axis("ui_left", "ui_right")
 	
 	#Converts the Stamina value into 2 decimal places
 	#var StaminaUsed = snapped(Stamina, 0.01)
@@ -90,6 +92,8 @@ func _physics_process(delta: float) -> void:
 			player_sprite.play("Run")
 		elif direction != 0:
 			player_sprite.play("Walk")
+		elif health_manager.PlayerHealth < 0.01:
+			player_sprite.play("Dead")
 	else:
 		player_sprite.play("Jump")
 	
@@ -114,6 +118,7 @@ func _on_beetle_attacked() -> void:
 	Knockback_Direction = beetle_direction
 	direction = Knockback_Direction * -1
 	Knockback = true
+	audio_stream_player_2d.play()
 
 
 func _on_hitbox_hit() -> void:

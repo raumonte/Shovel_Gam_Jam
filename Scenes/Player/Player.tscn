@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://o2xxutubf1cq"]
+[gd_scene load_steps=38 format=3 uid="uid://o2xxutubf1cq"]
 
 [ext_resource type="Script" uid="uid://djhjrw4rqdd3o" path="res://Scripts/Player/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://cwd4dk64yvng7" path="res://Sprites/Assets/Player/Antwon_Dead.png" id="2_825xp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://colb1bamkahb5" path="res://Sprites/Assets/Player/Antwon_Run-Sheet.png" id="6_825xp"]
 [ext_resource type="Texture2D" uid="uid://c3h4fafpvbbxj" path="res://Sprites/Assets/Player/Antwon_Walk-Sheet.png" id="7_0kmp4"]
 [ext_resource type="Script" uid="uid://2lt7mkjpsbkp" path="res://Scripts/Player/health_manager.gd" id="7_52ee3"]
+[ext_resource type="AudioStream" uid="uid://xnrqtxwdtfbl" path="res://Audio/hurt.wav" id="9_825xp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t5qx"]
 atlas = ExtResource("2_825xp")
@@ -287,6 +288,12 @@ horizontal_alignment = 1
 [node name="HealthManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("7_52ee3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_825xp")
+volume_db = -2.5
+pitch_scale = 0.8
+max_distance = 10000.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Knockback_Timer" to="." method="_on_knockback_timer_timeout"]
