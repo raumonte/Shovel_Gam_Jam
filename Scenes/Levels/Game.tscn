@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=4 uid="uid://cfgqnqo7htj7k"]
+[gd_scene load_steps=30 format=4 uid="uid://cfgqnqo7htj7k"]
 
 [ext_resource type="Script" uid="uid://dsrfshkevh052" path="res://Scripts/Levels/scene_manager(game).gd" id="1_02ggq"]
 [ext_resource type="PackedScene" uid="uid://o2xxutubf1cq" path="res://Scenes/Player/Player.tscn" id="1_45v51"]
 [ext_resource type="PackedScene" uid="uid://cnpj0rojucgtl" path="res://Scenes/UI/pause_menu.tscn" id="2_02ggq"]
 [ext_resource type="PackedScene" uid="uid://qyolo4frexg0" path="res://Scenes/UI/player_hud.tscn" id="3_eangq"]
+[ext_resource type="Script" uid="uid://wvr6g50n8h6a" path="res://Scenes/Levels/camera_2d.gd" id="3_sxf4f"]
 [ext_resource type="PackedScene" uid="uid://dog8ihjv5cf51" path="res://Scenes/Enemies/Beetle.tscn" id="4_oj1cf"]
 [ext_resource type="AudioStream" uid="uid://bowua2u7twi6k" path="res://Audio/AntsGoMarching_ForTheColony.wav" id="5_eangq"]
 [ext_resource type="Script" uid="uid://cflnab43acnd2" path="res://Scripts/audio_stream_player.gd" id="5_oj1cf"]
@@ -387,6 +388,11 @@ position = Vector2(102, 17)
 [node name="Camera2D" type="Camera2D" parent="SceneManager(Game)/Player"]
 position = Vector2(0, -116)
 zoom = Vector2(3, 3)
+limit_left = -220
+limit_right = 6670
+limit_bottom = 100
+limit_smoothed = true
+script = ExtResource("3_sxf4f")
 
 [node name="PauseMenu" parent="SceneManager(Game)/Player/Camera2D" instance=ExtResource("2_02ggq")]
 offset_top = 1.0

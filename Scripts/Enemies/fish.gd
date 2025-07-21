@@ -33,6 +33,7 @@ func _process(delta: float) -> void:
 		jumpDownVector = Vector2(0, jumpSpeed * delta)
 		jumpTime -= delta
 		
+		
 		if !isJumpingUp && !isJumpingDown:
 			jump()
 			
