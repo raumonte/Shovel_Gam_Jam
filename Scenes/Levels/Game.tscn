@@ -386,7 +386,7 @@ position = Vector2(134, 16)
 
 [node name="Camera2D" type="Camera2D" parent="SceneManager(Game)/Player"]
 position = Vector2(0, -116)
-zoom = Vector2(3, 3)
+zoom = Vector2(1.7, 2)
 limit_left = -220
 limit_right = 6670
 limit_bottom = 100

@@ -78,21 +78,21 @@ offset_bottom = 162.0
 grow_horizontal = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("3_qofgd")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 75
 text = "You Failed the Colony"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 4
-position = Vector2(348, 538)
+position = Vector2(184, 342)
 rotation = 4.71239
 scale = Vector2(5, 5)
 texture = ExtResource("3_gjw0p")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = 4
-position = Vector2(1555, 548)
+position = Vector2(896, 344)
 rotation = -1.5708
 scale = Vector2(5, -5)
 texture = ExtResource("3_gjw0p")
