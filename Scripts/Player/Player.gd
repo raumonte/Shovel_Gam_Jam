@@ -118,7 +118,7 @@ func _on_beetle_attacked() -> void:
 	Knockback_Direction = beetle_direction
 	direction = Knockback_Direction * -1
 	Knockback = true
-	audio_stream_player_2d.play()
+	
 
 
 func _on_hitbox_hit() -> void:
@@ -133,6 +133,7 @@ func _on_beetle_hit() -> void:
 	var hitbox_damage = get_parent().get_parent().get_node("Enemies/Level2/Beetle2").hitbox.BeetleDamage
 	if JustDamaged == false:
 		health_manager.PlayerHealth = health_manager.PlayerHealth - hitbox_damage
+		audio_stream_player_2d.play()
 		JustDamaged = true
 
 

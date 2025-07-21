@@ -26,7 +26,6 @@ signal Hit
 
 func _ready() -> void:
 	originposition = global_position
-	CurrentPosition = character_body_2d.BeetleCurrentPos
 
 func _on_reaction_timer_timeout() -> void:
 	label_2.text = ""
@@ -51,7 +50,7 @@ func _process(delta: float) -> void:
 	else:
 		beetle_collision.set_deferred("disabled", false)
 	if is_visible_in_tree() == true:
-		CurrentPosition = character_body_2d.position
+		CurrentPosition = position
 		if ray_cast_2d.is_colliding() == true:
 			reaction_timer.start()
 			label_2.text = "!"

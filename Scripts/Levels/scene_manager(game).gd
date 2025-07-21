@@ -9,15 +9,10 @@ extends Node
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $Player/AudioStreamPlayer/AudioStreamPlayer2D
 @onready var timer: Timer = $Timer
 
-var PlayerObtainedFoodSource = false
 
 
 func _on_damaged_cooldown_timeout() -> void:
 	player.JustDamaged = false
-
-
-func _ready() -> void:
-	PlayerObtainedFoodSource = false
 
 func _process(delta: float) -> void:
 	if player.JustDamaged == true and damaged_cooldown.is_stopped():
@@ -26,17 +21,15 @@ func _process(delta: float) -> void:
 	#Ensures player cannot interact with the food source more than once
 	if food_source.is_in_range == true and food_source.is_grabbed == false and Input.is_action_just_pressed("Interact"):
 		food_source.is_grabbed = true
-	if food_source.is_grabbed == true and PlayerObtainedFoodSource == false:
 		player.health_manager.Food = player.health_manager.Food + 1
 		food_source.FoodRemaining = food_source.FoodRemaining - 1
-		PlayerObtainedFoodSource = true
 	
 	if anthill.FoodDeposited == true:
 		player.health_manager.Food = 0
 		anthill.PlayerHasFood = false
 		player_hud.has_food = false
 		anthill.FoodDeposited = false
-		PlayerObtainedFoodSource = false
+		food_source.is_grabbed = false
 		player.health_manager.PlayerHealth = 100
 	
 	if anthill.LevelCount == 1:
