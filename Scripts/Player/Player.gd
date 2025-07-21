@@ -140,11 +140,29 @@ func _on_antlion_hit() -> void:
 	var hitbox_damage = get_parent().get_parent().get_node("Enemies/Level1/Antlion2").hitbox.AntlionDamage
 	if JustDamaged == false:
 		health_manager.PlayerHealth = health_manager.PlayerHealth - hitbox_damage
-		JustDamaged = true
+		if direction != 0:
+			Knockback_Direction = direction * -1
+			Knockback = true
+			audio_stream_player_2d.play()
+			JustDamaged = true
+		elif direction == 0:
+			if health_manager.Food > 0:
+				Knockback_Direction = 1
+				Knockback = true
+				audio_stream_player_2d.play()
+				JustDamaged = true
+			elif health_manager.Food == 0:
+				Knockback_Direction = -1
+				Knockback = true
+				audio_stream_player_2d.play()
+				JustDamaged = true
 
 
 func _on_fish_hit() -> void:
 	var hitbox_damage = get_parent().get_parent().get_node("Enemies/Level1/fish4").hitbox.FishDamage
 	if JustDamaged == false:
 		health_manager.PlayerHealth = health_manager.PlayerHealth - hitbox_damage
+		Knockback_Direction = direction * -1
+		Knockback = true
+		audio_stream_player_2d.play()
 		JustDamaged = true

@@ -80,6 +80,14 @@ func _process(delta: float) -> void:
 		audio_stream_player_2d.pitch_scale = 0.5
 		Engine.time_scale = 0.5
 		if player.is_on_floor():
+			Engine.time_scale = 1
 			get_tree().change_scene_to_file("res://Scenes/UI/death_screen.tscn")
 
 	
+
+
+
+
+
+func _on_antlion_hit() -> void:
+	pass # Replace with function body.
